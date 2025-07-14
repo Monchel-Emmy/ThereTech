@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            <span className="gradient-text">There Technology Ltd</span>
+            <span className="gradient-text">There Tech Ltd</span>
           </h1>
           <p className="hero-subtitle">
             Empowering the next generation of builders, problem-solvers, and tech leaders
