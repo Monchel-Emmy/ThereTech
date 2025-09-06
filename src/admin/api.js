@@ -1,5 +1,5 @@
 // Use environment variable for API URL, fallback to localhost for development
-export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://there-tech-backend.onrender.com/api';
 
 const defaultHeaders = {
   'Content-Type': 'application/json'
