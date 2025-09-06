@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.CORS_ORIGIN || 'https://yourdomain.com'] 
+    ? ['https://there-tech.vercel.app', process.env.CORS_ORIGIN || 'https://yourdomain.com'] 
     : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'http://localhost:5176']
 }));
 app.use(express.json({ limit: '10mb' }));
