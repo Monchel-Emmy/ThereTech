@@ -4,85 +4,12 @@ import { useAbout } from '../hooks/useApi';
 const About = () => {
   const { data, loading, error } = useAbout();
   
-  // Fallback data if API fails
-  const fallbackAbout = {
-    companyName: 'There Tech Ltd',
-    tagline: 'Empowering the next generation of builders, problem-solvers, and tech leaders',
-    mainDescription: 'There Tech Ltd is a Rwandan tech company on a mission to help people and businesses level up through smart, modern and innovative solutions. We believe in making technology accessible, practical, and impactful.',
-    mission: 'Based in Kigali, Rwanda, we\'re committed to empowering the next generation of builders, problem-solvers, and tech leaders who will shape the future of technology in Africa and beyond.',
-    vision: 'To be the leading technology partner for innovative businesses worldwide, recognized for our technical excellence, creative solutions, and unwavering commitment to client success.',
-    values: [
-      {
-        title: 'Innovation',
-        description: 'We constantly push boundaries to create cutting-edge solutions that solve real-world problems.',
-        icon: 'fas fa-lightbulb'
-      },
-      {
-        title: 'Collaboration',
-        description: 'We believe in the power of teamwork and partnerships to achieve extraordinary results.',
-        icon: 'fas fa-users'
-      },
-      {
-        title: 'Education',
-        description: 'We\'re committed to nurturing talent and sharing knowledge with the next generation.',
-        icon: 'fas fa-graduation-cap'
-      },
-      {
-        title: 'Impact',
-        description: 'We create solutions that drive lasting impact for our clients and communities.',
-        icon: 'fas fa-heart'
-      }
-    ],
-    team: [
-      {
-        name: 'Alex Johnson',
-        role: 'CEO & Founder',
-        bio: 'Visionary leader with 15+ years in technology and business development.',
-        image: 'alex-johnson.jpg',
-        socialLinks: {
-          linkedin: 'https://linkedin.com/in/alexjohnson',
-          github: 'https://github.com/alexjohnson',
-          email: 'alex@there-tech.com'
-        }
-      },
-      {
-        name: 'Sarah Chen',
-        role: 'CTO',
-        bio: 'Technical expert specializing in AI, cloud architecture, and scalable systems.',
-        image: 'sarah-chen.jpg',
-        socialLinks: {
-          linkedin: 'https://linkedin.com/in/sarahchen',
-          github: 'https://github.com/sarahchen',
-          email: 'sarah@there-tech.com'
-        }
-      },
-      {
-        name: 'Mike Rodriguez',
-        role: 'Lead Developer',
-        bio: 'Full-stack developer passionate about creating elegant, user-friendly applications.',
-        image: 'mike-rodriguez.jpg',
-        socialLinks: {
-          linkedin: 'https://linkedin.com/in/mikerodriguez',
-          github: 'https://github.com/mikerodriguez',
-          email: 'mike@there-tech.com'
-        }
-      }
-    ],
-    stats: {
-      projectsCompleted: 47,
-      clientsServed: 23,
-      yearsExperience: 8,
-      teamMembers: 12
-    }
-  };
 
-  // Use API data if available, otherwise fallback
-  const aboutData = data?.about || fallbackAbout;
-
-  // Use database data if available, otherwise fallback
-  const valuesList = data?.about?.values || fallbackAbout.values;
-  const teamList = data?.about?.team || fallbackAbout.team;
-  const visionText = data?.about?.vision || fallbackAbout.vision;
+  // Use API data only
+  const aboutData = data?.about || {};
+  const valuesList = data?.about?.values || [];
+  const teamList = data?.about?.team || [];
+  const visionText = data?.about?.vision || '';
 
   // Debug: Log the data being used (only in development)
   if (process.env.NODE_ENV === 'development') {
@@ -161,7 +88,7 @@ const About = () => {
       
       {error && (
         <div className="error-state">
-          <p>⚠️ Using fallback data (API error: {error})</p>
+          <p>❌ Failed to load about information. Please try again later.</p>
         </div>
       )}
 

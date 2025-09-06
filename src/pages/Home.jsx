@@ -3,37 +3,13 @@ import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import ServiceCard from '../components/ServiceCard';
 import { useServices } from '../hooks/useApi';
+import { ServiceSkeleton } from '../components/SkeletonLoader';
 
 const Home = () => {
   const { data, loading, error } = useServices();
   
-  // Fallback data if API fails
-  const fallbackServices = [
-    {
-      icon: 'fas fa-microchip',
-      title: 'IoT Solutions',
-      description: 'Design intelligent systems that connect devices, automate tasks, and boost efficiency.',
-      features: ['Smart Home Systems', 'Industrial IoT', 'Sensor Networks', 'Data Analytics'],
-      color: 'blue'
-    },
-    {
-      icon: 'fas fa-code',
-      title: 'Software Development',
-      description: 'From "just an idea" to fully functional apps, we create custom software solutions.',
-      features: ['Web Applications', 'Mobile Apps', 'Custom Software', 'API Development'],
-      color: 'green'
-    },
-    {
-      icon: 'fas fa-users',
-      title: 'Tech Mentorship',
-      description: 'We help young innovators by turning bold ideas into functional prototypes.',
-      features: ['Student Projects', 'Academic Support', 'Prototype Development', 'Career Guidance'],
-      color: 'purple'
-    }
-  ];
-
-  // Use API data if available, otherwise fallback
-  const featuredServices = data?.services || fallbackServices;
+  // Use API data only
+  const featuredServices = data?.services || [];
 
   // Transform API data to match component props
   const transformedServices = featuredServices.map(service => ({
@@ -54,22 +30,32 @@ const Home = () => {
           <h2 className="section-title">What We Bring to the Table</h2>
           
           {loading && (
-            <div className="loading-state">
-              <p>Loading services...</p>
+            <div className="services-grid">
+              {[...Array(3)].map((_, index) => (
+                <ServiceSkeleton key={index} />
+              ))}
             </div>
           )}
           
           {error && (
             <div className="error-state">
-              <p>⚠️ Using fallback data (API error: {error})</p>
+              <p>❌ Failed to load services. Please try again later.</p>
             </div>
           )}
           
-          <div className="services-grid">
-            {transformedServices.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
+          {!loading && !error && transformedServices.length === 0 && (
+            <div className="empty-state">
+              <p>No services available at the moment.</p>
+            </div>
+          )}
+          
+          {!loading && !error && transformedServices.length > 0 && (
+            <div className="services-grid">
+              {transformedServices.map((service, index) => (
+                <ServiceCard key={index} {...service} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
       

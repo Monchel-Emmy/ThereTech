@@ -6,68 +6,8 @@ import { ServiceSkeleton } from '../components/SkeletonLoader';
 const Services = () => {
   const { data, loading, error } = useServices();
   
-  // Fallback data if API fails
-  const fallbackServices = [
-    {
-      icon: 'fas fa-microchip',
-      title: 'IoT Solutions',
-      description: 'We design intelligent systems that connect devices, automate tasks, and boost efficiency. Our IoT solutions help businesses optimize operations and create smart environments.',
-      features: [
-        'Smart Home & Building Automation',
-        'Industrial IoT & Manufacturing',
-        'Sensor Networks & Data Collection',
-        'Real-time Monitoring Systems',
-        'Predictive Maintenance Solutions',
-        'Energy Management Systems'
-      ],
-      color: 'blue'
-    },
-    {
-      icon: 'fas fa-code',
-      title: 'Software Development',
-      description: 'From "just an idea" to fully functional apps, we create custom software solutions tailored to solve real world challenges. We build scalable, secure, and user-friendly applications.',
-      features: [
-        'Web Applications & E-commerce',
-        'Mobile Apps (iOS & Android)',
-        'Custom Business Software',
-        'API Development & Integration',
-        'Database Design & Management',
-        'Cloud-based Solutions'
-      ],
-      color: 'green'
-    },
-    {
-      icon: 'fas fa-chart-line',
-      title: 'IT Consulting',
-      description: 'We offer expert advice to help your business stay ahead in this fast-paced digital world. Our strategic guidance ensures technology investments drive real business value.',
-      features: [
-        'Technology Strategy & Planning',
-        'Digital Transformation',
-        'System Architecture Design',
-        'Security & Compliance',
-        'Performance Optimization',
-        'Technology Stack Selection'
-      ],
-      color: 'orange'
-    },
-    {
-      icon: 'fas fa-users',
-      title: 'Tech Mentorship & Student Support',
-      description: 'We help young innovators by turning bold ideas into functional prototypes and successful academic projects. Our mentorship program nurtures the next generation of tech leaders.',
-      features: [
-        'Student Project Development',
-        'Academic Project Support',
-        'Prototype Development',
-        'Career Guidance & Mentoring',
-        'Technical Skills Training',
-        'Innovation Workshops'
-      ],
-      color: 'purple'
-    }
-  ];
-
-  // Use API data if available, otherwise fallback
-  const allServices = data?.services || fallbackServices;
+  // Use API data only
+  const allServices = data?.services || [];
 
   // Transform API data to match component props
   const transformedServices = allServices.map(service => ({
@@ -100,11 +40,17 @@ const Services = () => {
           
           {error && (
             <div className="error-state">
-              <p>⚠️ Using fallback data (API error: {error})</p>
+              <p>❌ Failed to load services. Please try again later.</p>
             </div>
           )}
           
-          {!loading && (
+          {!loading && !error && transformedServices.length === 0 && (
+            <div className="empty-state">
+              <p>No services available at the moment.</p>
+            </div>
+          )}
+          
+          {!loading && !error && transformedServices.length > 0 && (
             <div className="services-grid">
               {transformedServices.map((service, index) => (
                 <ServiceCard key={index} {...service} />

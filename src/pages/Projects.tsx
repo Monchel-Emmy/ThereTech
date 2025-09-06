@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useProjects } from '../hooks/useApi';
+import { ProjectSkeleton } from '../components/SkeletonLoader';
 
 interface Project {
   _id?: string;
@@ -24,39 +25,8 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState('All');
 
-  // Fallback data if API fails
-  const fallbackProjects: Project[] = [
-    {
-      id: 1,
-      title: 'Smart Home IoT System',
-      category: 'iot',
-      description: 'Complete home automation system with smart sensors, mobile app control, and energy monitoring.',
-      technologies: ['Arduino', 'ESP32', 'React Native', 'Node.js', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
-      status: 'completed'
-    },
-    {
-      id: 2,
-      title: 'E-commerce Platform',
-      category: 'web',
-      description: 'Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'AWS'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop',
-      status: 'completed'
-    },
-    {
-      id: 3,
-      title: 'Student Project Management System',
-      category: 'web',
-      description: 'Platform for students to manage academic projects, track progress, and collaborate with mentors.',
-      technologies: ['Vue.js', 'Python', 'Django', 'PostgreSQL', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop',
-      status: 'in-progress'
-    }
-  ];
-
-  // Use API data if available, otherwise fallback
-  const allProjects: Project[] = (data as any)?.projects || fallbackProjects;
+  // Use API data only
+  const allProjects: Project[] = (data as any)?.projects || [];
 
   // Filter projects based on selection
   const filteredProjects = allProjects.filter(project => {
@@ -131,19 +101,28 @@ const Projects = () => {
           </div>
 
           {loading && (
-            <div className="loading-state">
-              <p>Loading projects...</p>
+            <div className="projects-grid">
+              {[...Array(6)].map((_, index) => (
+                <ProjectSkeleton key={index} />
+              ))}
             </div>
           )}
           
           {error && (
             <div className="error-state">
-              <p>⚠️ Using fallback data (API error: {error})</p>
+              <p>❌ Failed to load projects. Please try again later.</p>
             </div>
           )}
 
-          <div className="projects-grid">
-            {transformedProjects.map((project) => (
+          {!loading && !error && transformedProjects.length === 0 && (
+            <div className="empty-state">
+              <p>No projects available at the moment.</p>
+            </div>
+          )}
+
+          {!loading && !error && transformedProjects.length > 0 && (
+            <div className="projects-grid">
+              {transformedProjects.map((project) => (
               <div key={project.id} className="project-card">
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
@@ -189,11 +168,6 @@ const Projects = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {transformedProjects.length === 0 && !loading && (
-            <div className="no-projects">
-              <p>No projects found with the selected filters.</p>
             </div>
           )}
         </div>
