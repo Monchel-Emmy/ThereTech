@@ -5,11 +5,21 @@ const About = () => {
   const { data, loading, error } = useAbout();
   
 
-  // Use API data only
-  const aboutData = data?.about || {};
+  // Use API data with fallbacks
+  const aboutData = data?.about || {
+    companyName: 'There Tech',
+    tagline: 'Empowering the next generation of builders, problem-solvers, and tech leaders',
+    mainDescription: 'There Tech Ltd is a Rwandan tech company on a mission to help people and businesses level up through smart, modern and innovative solutions.',
+    mission: 'Based in Kigali, Rwanda, we\'re committed to empowering the next generation of builders, problem-solvers, and tech leaders who will shape the future of technology in Africa and beyond.',
+    stats: {
+      yearsExperience: 5,
+      projectsCompleted: 25,
+      clientsServed: 15
+    }
+  };
   const valuesList = data?.about?.values || [];
   const teamList = data?.about?.team || [];
-  const visionText = data?.about?.vision || '';
+  const visionText = data?.about?.vision || 'To be the leading technology partner for innovative businesses worldwide, recognized for our technical excellence, creative solutions, and unwavering commitment to client success.';
 
   // Debug: Log the data being used (only in development)
   if (process.env.NODE_ENV === 'development') {
