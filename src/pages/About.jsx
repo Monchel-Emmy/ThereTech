@@ -76,7 +76,7 @@ const About = () => {
       <section className="vision-section">
         <div className="container">
           <h2>Our Vision</h2>
-          <p>{visionText}</p>
+          <p>{visionText || 'To be the leading technology partner for innovative businesses worldwide, recognized for our technical excellence, creative solutions, and unwavering commitment to client success.'}</p>
         </div>
       </section>
 
