@@ -2,9 +2,13 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import ServiceCard from '../components/ServiceCard';
+import { useServices } from '../hooks/useApi';
 
 const Home = () => {
-  const featuredServices = [
+  const { data, loading, error } = useServices();
+  
+  // Fallback data if API fails
+  const fallbackServices = [
     {
       icon: 'fas fa-microchip',
       title: 'IoT Solutions',
@@ -28,6 +32,19 @@ const Home = () => {
     }
   ];
 
+  // Use API data if available, otherwise fallback
+  const featuredServices = data?.services || fallbackServices;
+
+  // Transform API data to match component props
+  const transformedServices = featuredServices.map(service => ({
+    icon: service.icon || 'fas fa-cog',
+    title: service.name || service.title,
+    description: service.description,
+    features: service.features || [],
+    color: service.color || 'blue',
+    image: service.image || null
+  }));
+
   return (
     <div className="home">
       <Hero />
@@ -35,8 +52,21 @@ const Home = () => {
       <section className="featured-services">
         <div className="container">
           <h2 className="section-title">What We Bring to the Table</h2>
+          
+          {loading && (
+            <div className="loading-state">
+              <p>Loading services...</p>
+            </div>
+          )}
+          
+          {error && (
+            <div className="error-state">
+              <p>⚠️ Using fallback data (API error: {error})</p>
+            </div>
+          )}
+          
           <div className="services-grid">
-            {featuredServices.map((service, index) => (
+            {transformedServices.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
           </div>

@@ -1,10 +1,23 @@
 import React from 'react';
 
-const ServiceCard = ({ icon, title, description, features, color }) => {
+const ServiceCard = ({ icon, title, description, features, color, image }) => {
   return (
     <div className={`service-card service-card-${color}`}>
       <div className="service-icon">
-        <i className={icon}></i>
+        {image ? (
+          <img 
+            src={image} 
+            alt={title} 
+            style={{ 
+              width: '60px', 
+              height: '60px', 
+              objectFit: 'cover', 
+              borderRadius: '8px' 
+            }} 
+          />
+        ) : (
+          <i className={icon}></i>
+        )}
       </div>
       <div className="service-content">
         <h3 className="service-title">{title}</h3>

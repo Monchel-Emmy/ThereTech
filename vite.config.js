@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE_PATH || '/ThereTech',
+  // Use base path for GitHub Pages deployment, empty for Vercel
+  base: process.env.VITE_BASE_PATH || '',
 })

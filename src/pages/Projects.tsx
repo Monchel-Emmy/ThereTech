@@ -1,64 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useProjects } from '../hooks/useApi';
+
+interface Project {
+  _id?: string;
+  id?: number;
+  title: string;
+  category: string;
+  description: string;
+  shortDescription?: string;
+  technologies: string[];
+  image?: string;
+  status: string;
+  client?: string;
+  duration?: string;
+  teamSize?: number;
+  githubUrl?: string;
+  liveUrl?: string;
+  features?: string[];
+}
 
 const Projects = () => {
-  const projects = [
+  const { data, loading, error } = useProjects();
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedStatus, setSelectedStatus] = useState('All');
+
+  // Fallback data if API fails
+  const fallbackProjects: Project[] = [
     {
       id: 1,
       title: 'Smart Home IoT System',
-      category: 'IoT Solutions',
+      category: 'iot',
       description: 'Complete home automation system with smart sensors, mobile app control, and energy monitoring.',
       technologies: ['Arduino', 'ESP32', 'React Native', 'Node.js', 'MongoDB'],
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
-      status: 'Completed'
+      status: 'completed'
     },
     {
       id: 2,
       title: 'E-commerce Platform',
-      category: 'Software Development',
+      category: 'web',
       description: 'Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'AWS'],
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop',
-      status: 'Completed'
+      status: 'completed'
     },
     {
       id: 3,
       title: 'Student Project Management System',
-      category: 'Tech Mentorship',
+      category: 'web',
       description: 'Platform for students to manage academic projects, track progress, and collaborate with mentors.',
       technologies: ['Vue.js', 'Python', 'Django', 'PostgreSQL', 'Docker'],
       image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop',
-      status: 'In Progress'
-    },
-    {
-      id: 4,
-      title: 'Industrial IoT Dashboard',
-      category: 'IoT Solutions',
-      description: 'Real-time monitoring dashboard for manufacturing equipment with predictive maintenance alerts.',
-      technologies: ['React', 'Python', 'MQTT', 'InfluxDB', 'Grafana'],
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop',
-      status: 'Completed'
-    },
-    {
-      id: 5,
-      title: 'Mobile Banking App',
-      category: 'Software Development',
-      description: 'Secure mobile banking application with biometric authentication and real-time transactions.',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'JWT', 'Firebase'],
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
-      status: 'Completed'
-    },
-    {
-      id: 6,
-      title: 'AI-Powered Chatbot',
-      category: 'Software Development',
-      description: 'Intelligent customer service chatbot with natural language processing and sentiment analysis.',
-      technologies: ['Python', 'TensorFlow', 'NLP', 'Flask', 'Redis'],
-      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=300&fit=crop',
-      status: 'In Progress'
+      status: 'in-progress'
     }
   ];
 
-  const categories = ['All', 'IoT Solutions', 'Software Development', 'Tech Mentorship'];
+  // Use API data if available, otherwise fallback
+  const allProjects: Project[] = (data as any)?.projects || fallbackProjects;
+
+  // Filter projects based on selection
+  const filteredProjects = allProjects.filter(project => {
+    const categoryMatch = selectedCategory === 'All' || project.category === selectedCategory;
+    const statusMatch = selectedStatus === 'All' || project.status === selectedStatus;
+    return categoryMatch && statusMatch;
+  });
+
+  // Get unique categories and statuses for filters
+  const categories = ['All', ...Array.from(new Set(allProjects.map(p => p.category)))];
+  const statuses = ['All', ...Array.from(new Set(allProjects.map(p => p.status)))];
+
+  // Transform API data to match component props
+  const transformedProjects = filteredProjects.map(project => ({
+    id: project._id || project.id || Math.random().toString(),
+    title: project.title,
+    category: project.category,
+    description: project.shortDescription || project.description,
+    technologies: project.technologies || [],
+    image: project.image || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+    status: project.status,
+    client: project.client,
+    duration: project.duration,
+    teamSize: project.teamSize,
+    githubUrl: project.githubUrl,
+    liveUrl: project.liveUrl,
+    features: project.features || []
+  }));
 
   return (
     <div className="projects-page">
@@ -71,30 +97,105 @@ const Projects = () => {
 
       <section className="projects-content">
         <div className="container">
+          {/* Filters */}
+          <div className="projects-filters">
+            <div className="filter-group">
+              <label htmlFor="category-filter">Category:</label>
+              <select 
+                id="category-filter"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+              >
+                {categories.map(category => (
+                  <option key={category} value={category}>
+                    {category === 'All' ? 'All Categories' : category.charAt(0).toUpperCase() + category.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+            
+            <div className="filter-group">
+              <label htmlFor="status-filter">Status:</label>
+              <select 
+                id="status-filter"
+                value={selectedStatus}
+                onChange={(e) => setSelectedStatus(e.target.value)}
+              >
+                {statuses.map(status => (
+                  <option key={status} value={status}>
+                    {status === 'All' ? 'All Statuses' : status.charAt(0).toUpperCase() + status.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {loading && (
+            <div className="loading-state">
+              <p>Loading projects...</p>
+            </div>
+          )}
+          
+          {error && (
+            <div className="error-state">
+              <p>⚠️ Using fallback data (API error: {error})</p>
+            </div>
+          )}
+
           <div className="projects-grid">
-            {projects.map((project) => (
+            {transformedProjects.map((project) => (
               <div key={project.id} className="project-card">
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
                   <div className="project-status">
                     <span className={`status-badge status-${project.status.toLowerCase().replace(' ', '-')}`}>
-                      {project.status}
+                      {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
                     </span>
                   </div>
                 </div>
                 <div className="project-content">
-                  <div className="project-category">{project.category}</div>
+                  <div className="project-category">{project.category.toUpperCase()}</div>
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">{project.description}</p>
+                  
+                  {project.client && (
+                    <div className="project-details">
+                      <span><strong>Client:</strong> {project.client}</span>
+                      {project.duration && <span><strong>Duration:</strong> {project.duration}</span>}
+                      {project.teamSize && <span><strong>Team:</strong> {project.teamSize} members</span>}
+                    </div>
+                  )}
+                  
                   <div className="project-technologies">
                     {project.technologies.map((tech, index) => (
                       <span key={index} className="tech-tag">{tech}</span>
                     ))}
                   </div>
+                  
+                  {(project.githubUrl || project.liveUrl) && (
+                    <div className="project-links">
+                      {project.githubUrl && (
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-small">
+                          <i className="fab fa-github"></i> GitHub
+                        </a>
+                      )}
+                      {project.liveUrl && (
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-small">
+                          <i className="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
+
+          {transformedProjects.length === 0 && !loading && (
+            <div className="no-projects">
+              <p>No projects found with the selected filters.</p>
+            </div>
+          )}
         </div>
       </section>
 
