@@ -1,6 +1,7 @@
 import React from 'react';
 import ServiceCard from '../components/ServiceCard';
 import { useServices } from '../hooks/useApi';
+import { ServiceSkeleton } from '../components/SkeletonLoader';
 
 const Services = () => {
   const { data, loading, error } = useServices();
@@ -90,8 +91,10 @@ const Services = () => {
       <section className="services-grid-section">
         <div className="container">
           {loading && (
-            <div className="loading-state">
-              <p>Loading services...</p>
+            <div className="services-grid">
+              {[...Array(6)].map((_, index) => (
+                <ServiceSkeleton key={index} />
+              ))}
             </div>
           )}
           
@@ -101,11 +104,13 @@ const Services = () => {
             </div>
           )}
           
-          <div className="services-grid">
-            {transformedServices.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
+          {!loading && (
+            <div className="services-grid">
+              {transformedServices.map((service, index) => (
+                <ServiceCard key={index} {...service} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
