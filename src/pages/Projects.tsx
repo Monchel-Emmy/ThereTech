@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useProjects } from '../hooks/useApi';
+import { useProjects } from '../hooks/useApiQuery';
 import { ProjectSkeleton } from '../components/SkeletonLoader';
 
 interface Project {
@@ -21,7 +21,7 @@ interface Project {
 }
 
 const Projects = () => {
-  const { data, loading, error } = useProjects();
+  const { data, isLoading, error } = useProjects();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState('All');
 
@@ -100,7 +100,7 @@ const Projects = () => {
             </div>
           </div>
 
-          {loading && (
+          {isLoading && (
             <div className="projects-grid">
               {[...Array(6)].map((_, index) => (
                 <ProjectSkeleton key={index} />
@@ -111,16 +111,19 @@ const Projects = () => {
           {error && (
             <div className="error-state">
               <p>❌ Failed to load projects. Please try again later.</p>
+              <button onClick={() => window.location.reload()} className="btn btn-primary">
+                Retry
+              </button>
             </div>
           )}
 
-          {!loading && !error && transformedProjects.length === 0 && (
+          {!isLoading && !error && transformedProjects.length === 0 && (
             <div className="empty-state">
               <p>No projects available at the moment.</p>
             </div>
           )}
 
-          {!loading && !error && transformedProjects.length > 0 && (
+          {!isLoading && !error && transformedProjects.length > 0 && (
             <div className="projects-grid">
               {transformedProjects.map((project) => (
               <div key={project.id} className="project-card">

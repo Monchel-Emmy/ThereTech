@@ -1,10 +1,10 @@
 import React from 'react';
 import ServiceCard from '../components/ServiceCard';
-import { useServices } from '../hooks/useApi';
+import { useServices } from '../hooks/useApiQuery';
 import { ServiceSkeleton } from '../components/SkeletonLoader';
 
 const Services = () => {
-  const { data, loading, error } = useServices();
+  const { data, isLoading, error } = useServices();
   
   // Use API data only
   const allServices = data?.services || [];
@@ -30,7 +30,7 @@ const Services = () => {
 
       <section className="services-grid-section">
         <div className="container">
-          {loading && (
+          {isLoading && (
             <div className="services-grid">
               {[...Array(6)].map((_, index) => (
                 <ServiceSkeleton key={index} />
@@ -41,16 +41,19 @@ const Services = () => {
           {error && (
             <div className="error-state">
               <p>❌ Failed to load services. Please try again later.</p>
+              <button onClick={() => window.location.reload()} className="btn btn-primary">
+                Retry
+              </button>
             </div>
           )}
           
-          {!loading && !error && transformedServices.length === 0 && (
+          {!isLoading && !error && transformedServices.length === 0 && (
             <div className="empty-state">
               <p>No services available at the moment.</p>
             </div>
           )}
           
-          {!loading && !error && transformedServices.length > 0 && (
+          {!isLoading && !error && transformedServices.length > 0 && (
             <div className="services-grid">
               {transformedServices.map((service, index) => (
                 <ServiceCard key={index} {...service} />

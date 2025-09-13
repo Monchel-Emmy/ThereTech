@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAbout } from '../hooks/useApi';
+import { useAbout } from '../hooks/useApiQuery';
 
 const About = () => {
-  const { data, loading, error } = useAbout();
+  const { data, isLoading, error } = useAbout();
   
 
   // Use API data with fallbacks
@@ -90,7 +90,7 @@ const About = () => {
         </div>
       </section>
 
-      {loading && (
+      {isLoading && (
         <div className="loading-state">
           <p>Loading company information...</p>
         </div>

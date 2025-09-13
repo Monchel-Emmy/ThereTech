@@ -2,11 +2,11 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import ServiceCard from '../components/ServiceCard';
-import { useServices } from '../hooks/useApi';
+import { useServices } from '../hooks/useApiQuery';
 import { ServiceSkeleton } from '../components/SkeletonLoader';
 
 const Home = () => {
-  const { data, loading, error } = useServices();
+  const { data, isLoading, error } = useServices();
   
   // Use API data only
   const featuredServices = data?.services || [];
@@ -29,7 +29,7 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">What We Bring to the Table</h2>
           
-          {loading && (
+          {isLoading && (
             <div className="services-grid">
               {[...Array(3)].map((_, index) => (
                 <ServiceSkeleton key={index} />
@@ -43,13 +43,13 @@ const Home = () => {
             </div>
           )}
           
-          {!loading && !error && transformedServices.length === 0 && (
+          {!isLoading && !error && transformedServices.length === 0 && (
             <div className="empty-state">
               <p>No services available at the moment.</p>
             </div>
           )}
           
-          {!loading && !error && transformedServices.length > 0 && (
+          {!isLoading && !error && transformedServices.length > 0 && (
             <div className="services-grid">
               {transformedServices.map((service, index) => (
                 <ServiceCard key={index} {...service} />

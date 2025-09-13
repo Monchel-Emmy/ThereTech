@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import ContactCard from '../components/ContactCard';
-import { useContact } from '../hooks/useApi';
+import { useContact } from '../hooks/useApiQuery';
 
 const Contact = () => {
-  const { data, loading, error } = useContact();
+  const { data, isLoading, error } = useContact();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
