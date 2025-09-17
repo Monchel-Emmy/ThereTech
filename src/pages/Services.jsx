@@ -29,14 +29,14 @@ const Services = () => {
       </section>
 
       <section className="services-grid-section">
-        <div className="container">
+        <div className="container"> <a href="http://localhost:3000/Services">
           {isLoading && (
-            <div className="services-grid">
+              <div className="services-grid">
               {[...Array(6)].map((_, index) => (
                 <ServiceSkeleton key={index} />
               ))}
             </div>
-          )}
+                )} </a>
           
           {error && (
             <div className="error-state">
