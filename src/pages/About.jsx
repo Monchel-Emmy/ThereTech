@@ -32,8 +32,8 @@ const About = () => {
   const getInitials = (name = '') => name.trim().split(/\s+/).map(w => w[0]?.toUpperCase() || '').slice(0,2).join('');
 
   // Styles for Team section enhancement
-  const teamGridStyle = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',margin: 10, gap: 20 };
-  const teamCardStyle = { background: '#0f172a', border: '1px solid #334155', borderRadius: 12, margin: 10, padding: 16, display: 'grid', gap: 12, alignContent: 'start' };
+  const teamGridStyle = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 2fr))',margin: 20, gap: 10 };
+  const teamCardStyle = { background: 'rgb(19, 62, 79)', border: '1px solidrgb(156, 167, 181)', borderRadius: 12, margin: 20, padding: 16, display: 'grid', gap: 12, alignContent: 'start' };
   const memberTopStyle = { display: 'flex', alignItems: 'center', gap: 12 };
   const avatarWrapperStyle = { width: 150, height: 150 , borderRadius: '50%', overflow: 'hidden', border: '1px solid #334155', background: '#0b1220', flexShrink: 0 };
   const avatarImgStyle = { width: '100%', height: '100%', objectFit: 'cover' };
