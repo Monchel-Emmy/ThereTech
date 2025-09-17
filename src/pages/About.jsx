@@ -39,7 +39,7 @@ const About = () => {
   const avatarImgStyle = { width: '100%', height: '100%', objectFit: 'cover' };
   const initialsStyle = { width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0b1220', color: '#93c5fd', fontWeight: 700, fontSize: '1.1rem' };
   const nameRoleStyle = { display: 'grid', gap: 4 };
-  const nameStyle = { margin: 0 };
+  const nameStyle = { margin: 0, color: 'white' };
   const roleBadgeStyle = { margin: 0, fontSize: 12, color: '#93c5fd' };
   const bioStyle = { margin: 0, color: '#cbd5e1', minHeight: 40 };
   const socialRowStyle = { display: 'flex', gap: 10 };
