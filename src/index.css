@@ -2,11 +2,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-body {
+  box-sizing: border-box; 
   overflow-x: hidden;
 }
+
 /* Loading animations */
 @keyframes pulse {
   0%, 100% {
