@@ -56,8 +56,7 @@ const Services = () => {
           {!isLoading && !error && transformedServices.length > 0 && (
              <div className="services-grid">
               {transformedServices.map((service, index) => (
-                <a href={`/Services?id=${index}`}>
-                <ServiceCard key={index} {...service} /></a>
+                <ServiceCard key={index} {...service} />
               ))}
             </div>
           )}
