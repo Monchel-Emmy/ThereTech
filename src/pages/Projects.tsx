@@ -180,31 +180,32 @@ const Projects = () => {
         <div className="container">
           <h2>What Our Clients Say</h2>
           <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"There Tech transformed our business with their IoT solution. The smart monitoring system has increased our efficiency by 40%."</p>
-              </div>
-              <div className="testimonial-author">
-                <h4>John Doe</h4>
-                <span>CEO, TechCorp Rwanda</span>
-              </div>
-            </div>
+         
             <div className="testimonial-card">
               <div className="testimonial-content">
                 <p>"The team helped me turn my final year project into a working prototype. Their mentorship was invaluable to my academic success."</p>
               </div>
               <div className="testimonial-author">
-                <h4>Sarah Johnson</h4>
+                <h4>Mugisha Jean Jacques</h4>
                 <span>Computer Science Student</span>
               </div>
             </div>
             <div className="testimonial-card">
               <div className="testimonial-content">
-                <p>"Professional, reliable, and innovative. There Tech delivered our e-commerce platform on time and exceeded our expectations."</p>
+                <p>"Professional, reliable, and innovative. There Tech delivered our Rwadiscount platform on time and exceeded our expectations."</p>
               </div>
               <div className="testimonial-author">
-                <h4>Michael Chen</h4>
-                <span>Founder, RwandanMart</span>
+                <h4>Michael ITWITAHO</h4>
+                <span>Founder, Rwadiscount</span>
+              </div>
+            </div>
+            <div className="testimonial-card">
+              <div className="testimonial-content">
+                <p>"There Tech Helped me during my masters degree project which was smart parking System"</p>
+              </div>
+              <div className="testimonial-author">
+                <h4>Emmanuel Niyonkuru</h4>
+                <span>Masters Graduate from University of Kigali</span>
               </div>
             </div>
           </div>

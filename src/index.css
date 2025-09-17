@@ -4,7 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  overflow-x: hidden;
+}
 /* Loading animations */
 @keyframes pulse {
   0%, 100% {

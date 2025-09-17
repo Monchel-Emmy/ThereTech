@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import ServiceCard from '../components/ServiceCard';
@@ -11,7 +12,7 @@ import "../components/Notification.css";
 const Home = () => {
 
   const [notificationMessage, setNotificationMessage] = useState(
-    "Welcome to ThereTech! Stay tuned for our upcoming updates."
+    "Welcome to ThereTech! We are here to help you with your technology needs."
   );
 
   const { data, isLoading, error } = useServices();

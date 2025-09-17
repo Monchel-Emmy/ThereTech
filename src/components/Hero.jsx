@@ -32,7 +32,7 @@ const Hero = () => {
     <section className="hero" ref={heroRef}>
       <div className="hero-content">
         <div className="hero-text">
-          <Notification message="Welcome to ThereTech! Stay tuned for our upcoming updates." type="info" />
+          {/* <Notification message="Welcome to ThereTech! Stay tuned for our upcoming updates." type="info" /> */}
           <h1 className="hero-title">
             <span className="gradient-text">There Tech Ltd</span>
           </h1>
