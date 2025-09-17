@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2024 There Tech Ltd. All rights reserved.</p>
+        <p>&copy; 2025 There Tech Ltd. All rights reserved.</p>
         <p>At There Tech, We don't just build projects, We create solutions that drive lasting impact.</p>
       </div>
     </footer>
