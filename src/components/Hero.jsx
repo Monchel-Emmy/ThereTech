@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Notification from "../components/Notification";
+import "../components/Notification.css";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -30,6 +32,7 @@ const Hero = () => {
     <section className="hero" ref={heroRef}>
       <div className="hero-content">
         <div className="hero-text">
+          <Notification message="Welcome to ThereTech! Stay tuned for our upcoming updates." type="info" />
           <h1 className="hero-title">
             <span className="gradient-text">There Tech Ltd</span>
           </h1>
