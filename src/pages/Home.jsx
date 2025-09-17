@@ -4,8 +4,16 @@ import Stats from '../components/Stats';
 import ServiceCard from '../components/ServiceCard';
 import { useServices } from '../hooks/useApiQuery';
 import { ServiceSkeleton } from '../components/SkeletonLoader';
+//notifications
+import Notification from "../components/Notification";
+import "../components/Notification.css";
 
 const Home = () => {
+
+  const [notificationMessage, setNotificationMessage] = useState(
+    "Welcome to ThereTech! Stay tuned for our upcoming updates."
+  );
+
   const { data, isLoading, error } = useServices();
   
   // Use API data only
@@ -23,6 +31,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Notification message={notificationMessage} type="info" />
       <Hero />
       
       <section className="featured-services">
