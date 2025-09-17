@@ -22,20 +22,20 @@ const Contact = () => {
     companyInfo: {
       name: 'There-Tech',
       address: {
-        street: '123 Tech Street',
-        city: 'Tech City',
-        state: 'TC',
-        zipCode: '12345',
-        country: 'USA'
+        street: '1 KN 78 St, Kigali',
+        city: 'Kigali City',
+        state: 'Kigali',
+        zipCode: '00000',
+        country: 'Rwanda'
       },
-      phone: '+1 (555) 123-4567',
-      email: 'info@there-tech.com',
-      website: 'https://there-tech.com'
+      phone: '+250 782 419 365',
+      email: 'theretech250@gmail.com',
+      website: 'https://theretech.rw'
     },
     socialMedia: {
-      linkedin: 'https://linkedin.com/company/there-tech',
-      github: 'https://github.com/there-tech',
-      twitter: 'https://twitter.com/there-tech'
+      linkedin: 'https://www.linkedin.com/company/there-tech-ltd',
+      github: 'https://github.com/theretech',
+      twitter: 'https://twitter.com/theretech'
     },
     officeHours: {
       monday: '9:00 AM - 6:00 PM',

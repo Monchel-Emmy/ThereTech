@@ -9,7 +9,7 @@ const Home = () => {
   const { data, isLoading, error } = useServices();
   
   // Use API data only
-  const featuredServices = data?.services || [];
+  const featuredServices = (data?.services || []).slice(0, 3);
 
   // Transform API data to match component props
   const transformedServices = featuredServices.map(service => ({
@@ -50,11 +50,16 @@ const Home = () => {
           )}
           
           {!isLoading && !error && transformedServices.length > 0 && (
-            <div className="services-grid">
-              {transformedServices.map((service, index) => (
-                <ServiceCard key={index} {...service} />
-              ))}
-            </div>
+            <>
+              <div className="services-grid">
+                {transformedServices.map((service, index) => (
+                  <ServiceCard key={index} compact {...service} />
+                ))}
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                <a href="/Services" className="btn btn-secondary">View all services</a>
+              </div>
+            </>
           )}
         </div>
       </section>
