@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import logo from "../assets/ThereTech logo.png";
+import logo from "../assets/images/theretech.png";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -20,10 +20,7 @@ function NavBar() {
         <div className="nav-brand">
           <NavLink to="/" className="nav-logo" onClick={closeMenu}>
             <img src={logo} alt="There Tech Ltd" className="logo-image" />
-            <div className="logo-text-container">
-              {/* <span className="logo-text">There Tech</span> */}
-              <span className="logo-subtitle">Ltd</span>
-            </div>
+          
           </NavLink>
         </div>
 

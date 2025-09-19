@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { loginAdmin, ensureDefaultAdmin, isAdminAuthenticated } from '../../admin/auth';
-import logo from '../../assets/ThereTech logo.png';
+import logo from '../../assets/images/theretech.png';
 
 const AdminLogin = () => {
   const [username, setUsername] = useState('');

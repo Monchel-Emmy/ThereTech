@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { isAdminAuthenticated, logoutAdmin } from './auth';
-import logo from '../assets/ThereTech logo.png';
+import logo from '../assets/images/theretech.png';
 
 const AdminLayout = () => {
   const navigate = useNavigate();
