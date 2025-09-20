@@ -1,19 +1,18 @@
 
-import { useState } from 'react';
+
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import ServiceCard from '../components/ServiceCard';
 import { useServices } from '../hooks/useApiQuery';
 import { ServiceSkeleton } from '../components/SkeletonLoader';
 //notifications
-import Notification from "../components/Notification";
+
 import "../components/Notification.css";
 
 const Home = () => {
 
-  const [notificationMessage, setNotificationMessage] = useState(
-    "Welcome to ThereTech! We are here to help you with your technology needs."
-  );
+ 
+  
 
   const { data, isLoading, error } = useServices();
   
@@ -32,12 +31,12 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Notification message={notificationMessage} type="info" />
+  
       <Hero />
       
       <section className="featured-services">
         <div className="container">
-          <h2 className="section-title">What We Bring to the Table</h2>
+          <h2 className="text-4xl text-blue-500">What We Do</h2>
           
           {isLoading && (
             <div className="services-grid">
@@ -76,13 +75,13 @@ const Home = () => {
       
       <Stats />
       
-      <section className="cta-section">
-        <div className="container">
+      <section >
+        <div >
           <h2>Ready to Level Up?</h2>
           <p>Whether you're running a business, developing a new product, or working on your final-year project, we're here to support your journey.</p>
-          <div className="cta-buttons">
-            <a href="/Contact" className="btn btn-primary">Get Started</a>
-            <a href="/Services" className="btn btn-secondary">Learn More</a>
+          <div>
+            <a href="/Contact" >Get Started</a>
+            <a href="/Services">Learn More</a>
           </div>
         </div>
       </section>
