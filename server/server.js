@@ -15,8 +15,9 @@ app.use(cors({
     ? [
         'https://there-tech.vercel.app',    // old vercel domain
         'https://theretech.rw',             // new domain
-        'https://www.theretech.rw',         // with www
-        process.env.CORS_ORIGIN || 'https://yourdomain.com'
+        'https://www.theretech.rw',
+        'http://localhost:5173',
+        process.env.CORS_ORIGIN
       ] 
     : [
         'http://localhost:5173', 
