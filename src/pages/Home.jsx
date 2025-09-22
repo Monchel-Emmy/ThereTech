@@ -36,7 +36,7 @@ const Home = () => {
       
       <section className="featured-services">
         <div className="container">
-          <h2 className="text-4xl text-blue-500">What We Do</h2>
+          <h2>What We Do</h2>
           
           {isLoading && (
             <div className="services-grid">

@@ -1,6 +1,7 @@
-// components/Logo.jsx
+
 import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
+import logo from "../assets/images/theretech.png"
 
 const Logo = ({ 
   to = "/", 
@@ -14,7 +15,7 @@ const Logo = ({
   const sizeClasses = {
     small: "h-8",
     medium: "h-12",
-    large: "h-16"
+    large: "h-22"
   };
 
 
@@ -31,7 +32,7 @@ const Logo = ({
       onClick={onClick}
     >
       <img 
-        src={require("../assets/images/theretech.png")} 
+        src={logo}
         alt="There Tech Ltd" 
         className={`${sizeClasses[size]} w-auto transition-all duration-300 hover:scale-105`} 
       />
