@@ -34,45 +34,44 @@ const Home = () => {
   
       <Hero />
       
-      <section className="featured-services">
-        <div className="container">
-          <h2>What We Do</h2>
-          
-          {isLoading && (
-            <div className="services-grid">
-              {[...Array(3)].map((_, index) => (
-                <ServiceSkeleton key={index} />
-              ))}
-            </div>
-          )}
-          
-          {error && (
-            <div className="error-state">
-              <p>❌ Failed to load services. Please try again later.</p>
-            </div>
-          )}
-          
-          {!isLoading && !error && transformedServices.length === 0 && (
-            <div className="empty-state">
-              <p>No services available at the moment.</p>
-            </div>
-          )}
-          
-          {!isLoading && !error && transformedServices.length > 0 && (
-            <>
-              <div className="services-grid">
-                {transformedServices.map((service, index) => (
-                  <ServiceCard key={index} compact {...service} />
-                ))}
-              </div>
-              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                <a href="/Services" className="btn btn-secondary">View all services</a>
-              </div>
-            </>
-          )}
+      <section className="py-16 bg-gray-50">
+  <div className="container-custom">
+    <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">What We Do</h2>
+    
+    {isLoading && (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[...Array(3)].map((_, index) => (
+          <ServiceSkeleton key={index} />
+        ))}
+      </div>
+    )}
+    
+    {error && (
+      <div className="text-center py-12">
+        <p className="text-red-600 text-lg">❌ Failed to load services. Please try again later.</p>
+      </div>
+    )}
+    
+    {!isLoading && !error && transformedServices.length === 0 && (
+      <div className="text-center py-12">
+        <p className="text-gray-500">No services available at the moment.</p>
+      </div>
+    )}
+    
+    {!isLoading && !error && transformedServices.length > 0 && (
+      <>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {transformedServices.map((service, index) => (
+            <ServiceCard key={index} compact {...service} />
+          ))}
         </div>
-      </section>
-      
+        <div className="text-center mt-12">
+          <a href="/Services" className="btn btn-secondary">View all services</a>
+        </div>
+      </>
+    )}
+  </div>
+</section>
       <Stats />
       
       <section >
