@@ -1,5 +1,5 @@
-import  { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -16,52 +16,80 @@ const Hero = () => {
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
+        color: 0x1e3a8a, // Tailwind blue-900
+        shininess: 50,
+        waveHeight: 15,
+        waveSpeed: 1.0,
+        zoom: 0.9,
       });
       setVantaEffect(effect);
     }
     return () => {
-      if (vantaEffect && typeof vantaEffect.destroy === 'function') {
+      if (vantaEffect && typeof vantaEffect.destroy === "function") {
         vantaEffect.destroy();
       }
     };
   }, [vantaEffect]);
 
   return (
-    <section className="hero" ref={heroRef}>
-      <div className="hero-content">
-        <div className="hero-text">
-          <h1 className="hero-title">
-            <span className="gradient-text">There Tech Ltd</span>
+    <section
+      ref={heroRef}
+      className="relative flex items-center justify-center min-h-screen text-white overflow-hidden"
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
+        {/* Left Side */}
+        <div className="text-center lg:text-left max-w-2xl">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-white">
+            There Tech Ltd
           </h1>
-          <p className="hero-subtitle">
-            Empowering the next generation of builders, problem-solvers, and tech leaders
+
+          <p className="mt-4 text-lg md:text-xl font-light text-gray-200">
+            Empowering the next generation of{" "}
+            <span className="font-semibold text-blue-400">builders</span>,{" "}
+            <span className="font-semibold text-blue-400">problem-solvers</span>, 
+            and <span className="font-semibold text-blue-400">tech leaders</span>.
           </p>
-          <p className="hero-description">
-            Rwandan tech company on a mission to help people and businesses level up through smart, 
-            modern and innovative solutions.
+
+          <p className="mt-4 text-gray-300">
+            Rwandan tech company on a mission to help people and businesses level
+            up through smart, modern and innovative solutions.
           </p>
-          <div className="hero-buttons">
-            <Link to="/Services" className="btn btn-primary">
+
+          {/* Buttons */}
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <Link
+              to="/Services"
+              className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-transform transform hover:scale-105 shadow-lg"
+            >
               Our Services
             </Link>
-            <Link to="/Contact" className="btn btn-secondary">
+            <Link
+              to="/Contact"
+              className="px-6 py-3 rounded-lg bg-white text-blue-600 hover:bg-gray-100 font-medium transition-transform transform hover:scale-105 shadow-lg"
+            >
               Get Started
             </Link>
           </div>
         </div>
-        <div className="hero-visual">
-          <div className="tech-grid">
-            <div className="tech-item">IoT</div>
-            <div className="tech-item">AI</div>
-            <div className="tech-item">Cloud</div>
-            <div className="tech-item">Mobile</div>
-            <div className="tech-item">Web</div>
-            <div className="tech-item">Data</div>
-          </div>
+
+        {/* Right Side Tech Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+          {["IoT", "AI", "Cloud", "Mobile", "Web", "Data"].map((tech) => (
+            <div
+              key={tech}
+              className="px-6 py-4 bg-white/10 backdrop-blur-md rounded-lg font-semibold hover:bg-blue-600/30 transition transform hover:scale-110 cursor-pointer shadow-md"
+            >
+              {tech}
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default Hero; 
+export default Hero;
