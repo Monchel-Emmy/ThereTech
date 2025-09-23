@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ServiceCard from '../components/ServiceCard';
 import { useServices } from '../hooks/useApiQuery';
 import { ServiceSkeleton } from '../components/SkeletonLoader';
