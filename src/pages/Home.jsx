@@ -21,13 +21,13 @@ const Home = () => {
 
   return (
     <div className="home min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100">
-      {/* Hero Section */}
+    
       <div className="relative overflow-hidden">
         <Hero />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-blue-800/5 pointer-events-none"></div>
       </div>
       
-      {/* What We Do Section */}
+      
       <section className="py-20 bg-gradient-to-b from-blue-50 to-white relative">
         {/* Background Elements */}
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-blue-50/80"></div>
