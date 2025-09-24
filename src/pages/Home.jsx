@@ -4,6 +4,7 @@ import ServiceCard from '../components/ServiceCard';
 import { useServices } from '../hooks/useApiQuery';
 import { ServiceSkeleton } from '../components/SkeletonLoader';
 import "../components/Notification.css";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { data, isLoading, error } = useServices();
@@ -28,8 +29,8 @@ const Home = () => {
       </div>
       
       
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white relative">
-        {/* Background Elements */}
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-white relative">
+      
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-blue-50/80"></div>
         <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"></div>
         <div className="absolute top-20 left-10 w-48 h-48 bg-blue-300/10 rounded-full blur-2xl"></div>
@@ -41,10 +42,10 @@ const Home = () => {
               <span className="text-blue-600 font-semibold uppercase tracking-wider text-sm">Our Services</span>
               <div className="w-12 h-1 bg-blue-500 ml-4"></div>
             </div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold  mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               What We Do
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Delivering exceptional solutions tailored to your unique needs with cutting-edge technology and expert craftsmanship
             </p>
           </div>
@@ -87,15 +88,15 @@ const Home = () => {
                 ))}
               </div>
               <div className="text-center mt-16">
-                <a 
-                  href="/Services" 
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-700 hover:to-blue-800 transform hover:-translate-y-1"
+                <Link
+                  to="/Services" 
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-400 to-blue-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-700 hover:to-blue-800 transform hover:-translate-y-1"
                 >
                   View All Services
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </>
           )}

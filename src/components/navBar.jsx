@@ -17,7 +17,7 @@ function NavBar() {
   };
   
   return (
-    <nav className="bg-white/95 backdrop-blur-sm shadow-md fixed w-full z-50 border-b border-gray-100">
+    <nav className="bg-white backdrop-blur-sm shadow-md fixed w-full z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
          
@@ -28,7 +28,6 @@ function NavBar() {
             className="flex-shrink-0 transition-transform hover:scale-105"
           />
 
-          {/* Desktop Navigation Links */}
           <div className="hidden md:flex md:items-center md:space-x-1">
             <NavLink 
               to="/" 
@@ -102,13 +101,13 @@ function NavBar() {
         <div className="hidden md:flex md:items-center">
           <Button 
             type="button" 
-            className="bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center hover:-translate-y-0.5 group"
+            className="bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-300 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center hover:-translate-y-0.5 group"
             onClick={() => {
               navigate("/Contact");
               closeMenu();
             }}
           >
-            Get Started <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            Get Started<ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
 
@@ -125,7 +124,7 @@ function NavBar() {
       </div>
     </div>
 
-    {/* Mobile Navigation Menu */}
+    
     <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
       <div className="px-4 pt-2 pb-6 space-y-1 bg-white shadow-inner border-t border-gray-100">
         <NavLink 

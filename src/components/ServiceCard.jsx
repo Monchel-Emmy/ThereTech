@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { 
   Code, 
   Cloud, 
@@ -9,7 +9,7 @@ import {
   CheckCircle,
   ArrowRight,
   Circle,
-  Hexagon
+  
 } from 'lucide-react';
 
 const iconMap = {
@@ -29,7 +29,6 @@ const ServiceCard = ({
   features, 
   color, 
   image, 
-  compact = false,
   layout = 'default',
   index = 0 
 }) => {
@@ -50,10 +49,10 @@ const ServiceCard = ({
       <div className={`group relative flex items-center mb-32 ${
         index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
       }`}>
-        {/* Content */}
+    
         <div className={`w-1/2 ${index % 2 === 0 ? 'pr-16 text-right' : 'pl-16'}`}>
           <div className="relative">
-            {/* Decorative Element */}
+  
             <div className={`absolute top-1/2 transform -translate-y-1/2 ${
               index % 2 === 0 ? '-right-4' : '-left-4'
             } w-8 h-8 bg-gradient-to-br ${config.gradient} rounded-full flex items-center justify-center z-20`}>
@@ -102,7 +101,7 @@ const ServiceCard = ({
         {/* Central Icon */}
         <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
           <div className="relative">
-            <div className="w-20 h-20 bg-gradient-to-br from-white to-gray-100 rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white transform group-hover:scale-110 transition-all duration-500">
+            <div className="w-20 h-20 bg-gradient-to-br from-white to-blue-100 rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white transform group-hover:scale-110 transition-all duration-500">
               {image ? (
                 <img src={image} alt={title} className="w-10 h-10 rounded-lg" />
               ) : (
@@ -127,14 +126,14 @@ const ServiceCard = ({
       <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_30%_30%,#000,transparent_50%)]"></div>
       
       {/* Animated Border */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-gray-100 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="absolute inset-[2px] bg-white rounded-3xl"></div>
       </div>
       
       <div className="relative z-10">
         {/* Icon with Floating Effect */}
         <div className="relative inline-block mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+          <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-blue-400 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
             {image ? (
               <img src={image} alt={title} className="w-8 h-8 rounded-lg" />
             ) : (
@@ -168,14 +167,8 @@ const ServiceCard = ({
           </div>
         )}
         
-        {/* Animated CTA */}
-        <button className="group/btn inline-flex items-center font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
-          <span className="relative overflow-hidden">
-            Discover More
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover/btn:w-full transition-all duration-300"></span>
-          </span>
-          <ArrowRight className="w-5 h-5 ml-3 transform group-hover/btn:translate-x-1 transition-transform" />
-        </button>
+       
+  
       </div>
       
       {/* Hover Shine Effect */}
