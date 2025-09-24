@@ -204,17 +204,13 @@ const Projects = () => {
               </div>
             ) : transformedProjects.length === 0 ? (
               <div className="text-center py-20">
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl mb-6">
-                  <Lightbulb className="w-12 h-12 text-blue-500" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">No Projects Found</h3>
-                <p className="text-gray-600">Try adjusting your filters to see more results.</p>
+              
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {transformedProjects.map((project) => (
                   <div key={project.id} className="group relative bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
-                    {/* Project Image */}
+                    {/* Project Image */}4
                     <div className="relative overflow-hidden">
                       <img 
                         src={project.image} 
@@ -309,7 +305,7 @@ const Projects = () => {
                     </div>
 
                     {/* Hover Effect */}
-                    <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
+                    <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-white to-blue-500 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
                       <div className="absolute inset-[2px] bg-white rounded-3xl"></div>
                     </div>
                   </div>
@@ -329,8 +325,8 @@ const Projects = () => {
               <span className="text-blue-600 font-semibold uppercase tracking-widest text-sm">Testimonials</span>
               <div className="w-8 h-1 bg-blue-500 ml-3"></div>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              What Our <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Clients Say</span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              What Our Clients Say
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Hear from students and businesses we've helped succeed</p>
           </div>
@@ -351,7 +347,7 @@ const Projects = () => {
 
                 {/* Author */}
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-white to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
                     {testimonial.author.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
@@ -370,36 +366,8 @@ const Projects = () => {
 
     
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-white to-blue-50/50">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <Award className="w-16 h-16 mx-auto mb-8 text-blue-600" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Ready to Start Your <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Project?</span>
-            </h2>
-            <p className="text-gray-600 text-lg mb-8">
-              Whether you're a business looking to innovate or a student with a great idea, we're here to help you succeed.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:scale-105 transition-transform duration-300"
-              >
-                Get Started
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-              <Link 
-                to="/services" 
-                className="inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors duration-300"
-              >
-                Our Services
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+ 
+      
     </div>
   );
 };
