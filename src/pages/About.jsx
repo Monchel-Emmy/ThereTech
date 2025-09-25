@@ -179,7 +179,7 @@ const About = () => {
               <div className="w-8 md:w-12 h-0.5 bg-blue-500 ml-3 md:ml-4"></div>
             </div>
             
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl  font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Our Mission
             </h2>
           </div>
@@ -252,7 +252,7 @@ const About = () => {
               <span className="text-blue-600 font-semibold uppercase tracking-widest text-xs md:text-sm">Our Vision</span>
               <div className="w-8 h-0.5 bg-blue-500 ml-3 md:ml-4"></div>
             </div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
               Looking Towards the <span className="bg-gradient-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent">Future</span>
             </h2>
           </div>
@@ -278,7 +278,7 @@ const About = () => {
               <div className="w-8 md:w-12 h-0.5 bg-blue-500 ml-3 md:ml-4"></div>
             </div>
             
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl  font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               What We Stand For
             </h2>
           </div>
@@ -315,7 +315,7 @@ const About = () => {
               <div className="w-8 md:w-12 h-0.5 bg-blue-500 ml-3 md:ml-4"></div>
             </div>
             
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Meet Our Team
             </h2>
           </div>
