@@ -56,18 +56,7 @@ const ServiceCard = ({
           } mb-8 md:mb-0`}
         >
           <div className="relative">
-            {/* Timeline Circle */}
-            <div
-              className={`absolute top-0 md:top-1/2 transform md:-translate-y-1/2 
-                ${index % 2 === 0 ? "left-4 md:-right-4" : "right-4 md:-left-4"} 
-                w-8 h-8 bg-gradient-to-br ${
-                  config.gradient
-                } rounded-full flex items-center justify-center z-20 shadow-md`}
-            >
-              <Circle className="w-4 h-4 text-white" fill="currentColor" />
-            </div>
-
-            {/* Content Card */}
+           
             <div
               className={`relative bg-white/95 backdrop-blur-lg rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 transform transition-all duration-700 hover:scale-[1.02] ${
                 index % 2 === 0 ? "hover:translate-x-2" : "hover:-translate-x-2"
@@ -77,10 +66,10 @@ const ServiceCard = ({
                 <IconComponent className={`w-5 h-5 ${config.text} mr-2`} /> {/* Used config.text here */}
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-3 clear-both leading-tight">
+              <h3 className="text-2xl md:text-3xl text-center font-black text-gray-900 mb-3 clear-both leading-tight">
                 {title}
               </h3>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
+              <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed mb-5">
                 {description}
               </p>
 
@@ -88,7 +77,7 @@ const ServiceCard = ({
                 <div className="space-y-2 mb-6">
                   {features.slice(0, 3).map((feature, i) => (
                     <div key={i} className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" /> {/* Changed to green */}
+                      <CheckCircle className="w-4 h-4 text-blue-500 mr-3 flex-shrink-0" /> {/* Changed to green */}
                       <span className="text-xs md:text-sm">{feature}</span>
                     </div>
                   ))}
@@ -97,7 +86,7 @@ const ServiceCard = ({
 
               <Link
                 to="/Projects"
-                className={`inline-flex items-center text-blue-700 hover:text-blue-900 font-semibold transition-colors text-sm md:text-base`}
+                className={`flex items-center justify-center text-blue-700 hover:text-blue-900 font-semibold transition-colors text-sm md:text-base`}
               >
                 Explore More
                 <ArrowRight className="w-4 h-4 ml-2" />
