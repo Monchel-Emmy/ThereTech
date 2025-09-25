@@ -82,7 +82,7 @@ const Hero = () => {
           {["IoT", "AI", "Cloud", "Mobile", "Web", "Data"].map((tech) => (
             <div
               key={tech}
-              className="px-8 py-6 bg-white/10 backdrop-blur-md rounded-xl font-semibold text-lg hover:bg-blue-900/40 transition transform hover:scale-110 cursor-pointer shadow-md"
+              className="px-8 py-6 bg-white/40 backdrop-blur-md rounded-xl font-semibold text-lg hover:bg-blue-900/40 transition transform hover:scale-110 cursor-pointer shadow-md"
             >
               {tech}
             </div>
