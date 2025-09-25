@@ -149,6 +149,7 @@ const Services = () => {
                     {...service}
                     layout="timeline"
                     index={index}
+                    
                   />
                 ))}
               </div>
