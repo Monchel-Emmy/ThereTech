@@ -17,7 +17,7 @@ const Hero = () => {
         scale: 1.0,
         scaleMobile: 1.0,
         color: 0x1e40af,
-        shininess: 80,
+        shininess: 50,
         waveHeight: 20,
         waveSpeed: 1.0,
         zoom: 0.95,
@@ -55,7 +55,7 @@ const Hero = () => {
             and <span className="text-blue-900 font-semibold">tech leaders</span>.
           </p>
 
-          <p className="mt-4 text-gray-300">
+          <p className="mt-4 text-white">
             We’re a Rwandan tech company on a mission to help people and
             businesses level up through smart, modern, and innovative solutions.
           </p>

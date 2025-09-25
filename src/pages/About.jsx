@@ -72,20 +72,13 @@ const About = () => {
       name: "Jean Jacques Mugisha",
       role: "Lead Developer & Founder",
       bio: "Full-stack developer with expertise in IoT, web technologies, and system architecture.",
-      socialLinks: {
-        linkedin: "#",
-        github: "#",
-        email: "jean@theretech.com"
-      }
+    
     },
     {
       name: "Michael ITWITAHO",
       role: "Project Manager",
       bio: "Experienced in managing complex projects and ensuring timely delivery with quality.",
-      socialLinks: {
-        linkedin: "#",
-        email: "michael@theretech.com"
-      }
+     
     }
   ];
 
@@ -161,7 +154,7 @@ const About = () => {
           <Hexagon className="w-8 h-8 text-blue-300/40" />
         </div>
         <div className="absolute top-20 right-20 animate-float delay-1000">
-          <Circle className="w-6 h-6 text-purple-300/30" />
+          <Circle className="w-6 h-6 text-blue-300/30" />
         </div>
       </section>
 
@@ -202,9 +195,9 @@ const About = () => {
               {/* Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
-                  { number: aboutData.stats.yearsExperience, label: 'Years Experience', icon: Calendar, color: 'from-blue-500 to-blue-600' },
-                  { number: aboutData.stats.projectsCompleted, label: 'Projects Completed', icon: Rocket, color: 'from-purple-500 to-purple-600' },
-                  { number: aboutData.stats.clientsServed, label: 'Happy Clients', icon: Users, color: 'from-green-500 to-green-600' }
+                  { number: aboutData.stats.yearsExperience, label: 'Years Experience', icon: Calendar, color: 'from-blue-500 to-indigo-600' },
+                  { number: aboutData.stats.projectsCompleted, label: 'Projects Completed', icon: Rocket, color: 'from-indigo-500 to-blue-600' },
+                  { number: aboutData.stats.clientsServed, label: 'Happy Clients', icon: Users, color: 'from-blue-500 to-indigp-600' }
                 ].map((stat, index) => {
                   const IconComponent = stat.icon;
                   return (
@@ -252,8 +245,8 @@ const About = () => {
               <span className="text-blue-600 font-semibold uppercase tracking-widest text-sm">Our Vision</span>
               <div className="w-8 h-1 bg-blue-500 ml-3"></div>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Looking Towards the <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Future</span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Looking Towards the <span className="bg-gradient-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent">Future</span>
             </h2>
           </div>
 
@@ -290,7 +283,7 @@ const About = () => {
                 <div key={index} className="group relative">
                   <div className="relative bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100/50 h-full">
                     {/* Icon */}
-                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-7 h-7 text-white" />
                     </div>
                     
@@ -403,7 +396,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <Sparkles className="w-16 h-16 mx-auto mb-8 text-blue-600" />
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Ready to Work <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Together?</span>
+              Ready to Work <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Together?</span>
             </h2>
             <p className="text-gray-600 text-lg mb-8">
               Whether you're running a business, developing a new product, or working on your final-year project, 

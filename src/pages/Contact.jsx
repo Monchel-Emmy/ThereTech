@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import ContactCard from '../components/ContactCard';
 import { useContact } from '../hooks/useApiQuery';
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Clock, 
+  Send, 
+  MessageCircle,
+  ArrowRight,
+  Zap,
+  Lightbulb,
+  Hexagon,
+  Circle
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   const { data, isLoading, error } = useContact();
@@ -94,227 +108,353 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
       {/* Hero Section */}
-      <section className="contact-hero bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-5xl font-bold mb-6">Get In Touch</h1>
-            <p className="text-xl text-blue-100 leading-relaxed">
+      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
+        {/* Abstract Background Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-64 bg-blue-600/10 rounded-full blur-[100px]"></div>
+          
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center text-white">
+            <div className="inline-flex items-center justify-center mb-6 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <MessageCircle className="w-5 h-5 mr-3" />
+              <span className="font-semibold text-sm uppercase tracking-widest">Get In Touch</span>
+            </div>
+            
+            <h1 className="text-5xl font-black mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">
+                Let's Start Your Project
+              </span>
+            </h1>
+            
+            <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-12">
               Ready to level up your business or project? Let's work together to bring your ideas to life with cutting-edge solutions.
             </p>
+            
+            <div className="flex justify-center space-x-6">
+              <Link to="#contact-form" className="group relative overflow-hidden px-8 py-4 bg-white text-blue-900 font-bold rounded-full transition-all duration-300 hover:scale-105">
+                <span className="relative z-10">Send Message</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+              </Link>
+              
+              <Link to="/services" className="group px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+                <span className="flex items-center">
+                  Our Services
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            </div>
           </div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute bottom-10 left-10 animate-float">
+          <Hexagon className="w-8 h-8 text-blue-300/40" />
+        </div>
+        <div className="absolute top-20 right-20 animate-float delay-1000">
+          <Circle className="w-6 h-6 text-purple-300/30" />
         </div>
       </section>
 
       {/* Contact Content Section */}
-      <section className="contact-content py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12">
+      <section className="py-20 relative">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center mb-6">
+              <div className="w-12 h-1 bg-blue-500 mr-4"></div>
+              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Contact Us</span>
+              <div className="w-12 h-1 bg-blue-500 ml-4"></div>
+            </div>
+            
+            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              Get In Touch
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Contact Info */}
-            <div className="contact-info-section">
+            <div className="space-y-6">
               <ContactCard contactData={contactData} />
+              
+              {/* Quick Contact Cards */}
+              <div className="grid grid-cols-1 gap-4">
+                {[
+                  {
+                    icon: Phone,
+                    title: 'Call Us',
+                    content: contactData.companyInfo.phone,
+                    color: 'from-green-500 to-green-600'
+                  },
+                  {
+                    icon: Mail,
+                    title: 'Email Us',
+                    content: contactData.companyInfo.email,
+                    color: 'from-blue-500 to-blue-600'
+                  },
+                  {
+                    icon: MapPin,
+                    title: 'Visit Us',
+                    content: `${contactData.companyInfo.address.street}, ${contactData.companyInfo.address.city}`,
+                    color: 'from-purple-500 to-purple-600'
+                  },
+                  {
+                    icon: Clock,
+                    title: 'Office Hours',
+                    content: 'Mon - Fri: 9:00 AM - 6:00 PM',
+                    color: 'from-orange-500 to-orange-600'
+                  }
+                ].map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <div key={index} className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-blue-100/50">
+                      <div className="flex items-center space-x-4">
+                        <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center`}>
+                          <IconComponent className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                          <p className="text-gray-600 text-sm">{item.content}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Contact Form */}
-            <div className="contact-form-section">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-blue-50">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="form-group">
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="form-group">
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="+250 XXX XXX XXX"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="What's this about?"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="form-group">
-                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="web-development">Web Development</option>
-                        <option value="mobile-apps">Mobile Apps</option>
-                        <option value="iot-solutions">IoT Solutions</option>
-                        <option value="consulting">IT Consulting</option>
-                        <option value="student-support">Student Support</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
-                      <select
-                        id="budget"
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      >
-                        <option value="not-sure">Not sure</option>
-                        <option value="under-200k">Under 200,000 FRW</option>
-                        <option value="200k-400k">200,001 FRW - 400,000 FRW</option>
-                        <option value="400k-700k">400,001 FRW - 700,000 FRW</option>
-                        <option value="700k-1000M">700,001 FRW- 1,000,000 FRW</option>
-                        <option value="1M+">1,000,000+ FRW</option>
-                      </select>
-                    </div>
-                  </div>
-
+            <div id="contact-form" className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-blue-100/50">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                  <Send className="w-5 h-5 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">Send us a Message</h2>
+              </div>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div className="form-group">
-                    <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">Project Timeline</label>
-                    <select
-                      id="timeline"
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    >
-                      <option value="not-sure">Not sure</option>
-                      <option value="asap">ASAP</option>
-                      <option value="1-2-weeks">1-2 weeks</option>
-                      <option value="1-2-months">1-2 months</option>
-                      <option value="3-6-months">3-6 months</option>
-                      <option value="6-months+">6+ months</option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={formData.message}
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-vertical"
-                      placeholder="Tell us about your project, goals, and how we can help..."
-                    ></textarea>
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50"
+                      placeholder="Your full name"
+                    />
                   </div>
+                  <div className="form-group">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
 
-                  {submitStatus.message && (
-                    <div className={`submit-status p-4 rounded-lg ${
-                      submitStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' :
-                      submitStatus.type === 'error' ? 'bg-red-50 text-red-700 border border-red-200' :
-                      'bg-blue-50 text-blue-700 border border-blue-200'
-                    }`}>
-                      {submitStatus.message}
-                    </div>
-                  )}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="form-group">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50"
+                      placeholder="+250 XXX XXX XXX"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50"
+                      placeholder="What's this about?"
+                    />
+                  </div>
+                </div>
 
-                  <button 
-                    type="submit" 
-                    className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                    disabled={submitStatus.type === 'loading'}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="form-group">
+                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="web-development">Web Development</option>
+                      <option value="mobile-apps">Mobile Apps</option>
+                      <option value="iot-solutions">IoT Solutions</option>
+                      <option value="consulting">IT Consulting</option>
+                      <option value="student-support">Student Support</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50"
+                    >
+                      <option value="not-sure">Not sure</option>
+                      <option value="under-200k">Under 200,000 FRW</option>
+                      <option value="200k-400k">200,001 FRW - 400,000 FRW</option>
+                      <option value="400k-700k">400,001 FRW - 700,000 FRW</option>
+                      <option value="700k-1000M">700,001 FRW- 1,000,000 FRW</option>
+                      <option value="1M+">1,000,000+ FRW</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">Project Timeline</label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50"
                   >
-                    {submitStatus.type === 'loading' ? (
-                      <span className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Sending...
-                      </span>
-                    ) : 'Send Message'}
-                  </button>
-                </form>
-              </div>
+                    <option value="not-sure">Not sure</option>
+                    <option value="asap">ASAP</option>
+                    <option value="1-2-weeks">1-2 weeks</option>
+                    <option value="1-2-months">1-2 months</option>
+                    <option value="3-6-months">3-6 months</option>
+                    <option value="6-months+">6+ months</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-vertical bg-white/50"
+                    placeholder="Tell us about your project, goals, and how we can help..."
+                  ></textarea>
+                </div>
+
+                {submitStatus.message && (
+                  <div className={`p-4 rounded-lg ${
+                    submitStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' :
+                    submitStatus.type === 'error' ? 'bg-red-50 text-red-700 border border-red-200' :
+                    'bg-blue-50 text-blue-700 border border-blue-200'
+                  }`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-1"
+                  disabled={submitStatus.type === 'loading'}
+                >
+                  {submitStatus.type === 'loading' ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    <span className="flex items-center justify-center">
+                      Send Message
+                      <Send className="w-5 h-5 ml-2" />
+                    </span>
+                  )}
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="faq-section py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600 text-lg">Quick answers to common questions about our services</p>
+      <section className="py-20 bg-gradient-to-br from-white to-blue-50/50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center mb-6">
+              <div className="w-12 h-1 bg-blue-500 mr-4"></div>
+              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">FAQ</span>
+              <div className="w-12 h-1 bg-blue-500 ml-4"></div>
+            </div>
+            
+            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Quick answers to common questions about our services</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className=" bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">What types of projects do you work on?</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We work on a wide range of projects including IoT solutions, custom software development, mobile apps, web applications, and student project support. No project is too small or too complex.
-              </p>
-            </div>
-            <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Do you work with students?</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Absolutely! We specialize in helping students turn their academic projects into functional prototypes. We provide mentorship, technical guidance, and development support.
-              </p>
-            </div>
-            <div className=" bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">What is your typical project timeline?</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Project timelines vary depending on complexity. Small projects can take 2-4 weeks, while larger applications may take 2-6 months. We always provide detailed timelines during our initial consultation.
-              </p>
-            </div>
-            <div className=" bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Do you provide ongoing support?</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Yes, we offer ongoing support and maintenance for all our projects. We believe in building long-term relationships with our clients.
-              </p>
-            </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                question: "What types of projects do you work on?",
+                answer: "We work on a wide range of projects including IoT solutions, custom software development, mobile apps, web applications, and student project support. No project is too small or too complex."
+              },
+              {
+                question: "Do you work with students?",
+                answer: "Absolutely! We specialize in helping students turn their academic projects into functional prototypes. We provide mentorship, technical guidance, and development support."
+              },
+              {
+                question: "What is your typical project timeline?",
+                answer: "Project timelines vary depending on complexity. Small projects can take 2-4 weeks, while larger applications may take 2-6 months. We always provide detailed timelines during our initial consultation."
+              },
+              {
+                question: "Do you provide ongoing support?",
+                answer: "Yes, we offer ongoing support and maintenance for all our projects. We believe in building long-term relationships with our clients."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-blue-100/50">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                  <Lightbulb className="w-5 h-5 text-blue-600 mr-3" />
+                  {faq.question}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+     
     </div>
   );
 };
