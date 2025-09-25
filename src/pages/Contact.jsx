@@ -259,10 +259,10 @@ const Contact = () => {
               <div className="w-8 md:w-12 h-0.5 bg-blue-500 ml-3 md:ml-4"></div>
             </div>
 
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Get In Touch
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base lg:text-lg">
+            <p className=" max-w-2xl mx-auto text-sm md:text-base lg:text-lg">
               We're here to help you bring your ideas to life. Get in touch with
               us today.
             </p>
@@ -277,7 +277,7 @@ const Contact = () => {
                     icon: Phone,
                     title: "Call Us",
                     content: contactData.companyInfo.phone,
-                    color: "from-green-500 to-green-600",
+                    color: "from-blue-500 to-indigo-600",
                     link: `tel:${contactData.companyInfo.phone}`,
                   },
                   {
@@ -287,18 +287,12 @@ const Contact = () => {
                     color: "from-blue-500 to-blue-600",
                     link: `mailto:${contactData.companyInfo.email}`,
                   },
-                  {
-                    icon: MapPin,
-                    title: "Visit Us",
-                    content: `${contactData.companyInfo.address.street}, ${contactData.companyInfo.address.city}`,
-                    color: "from-purple-500 to-purple-600",
-                    link: "https://maps.google.com",
-                  },
+                 
                   {
                     icon: Clock,
                     title: "Office Hours",
                     content: "Mon - Fri: 9:00 AM - 6:00 PM",
-                    color: "from-orange-500 to-orange-600",
+                    color: "from-blue-500 to-indigo-600",
                   },
                 ].map((item, index) => {
                   const IconComponent = item.icon;
@@ -376,7 +370,7 @@ const Contact = () => {
               className="bg-white/80 backdrop-blur-md rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 shadow-xl border border-blue-100/50"
             >
               <div className="flex items-center mb-4 md:mb-6 lg:mb-8">
-                <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg md:rounded-xl flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
                   <Send className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" />
                 </div>
                 <div>
@@ -582,7 +576,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 md:py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5 md:hover:-translate-y-1 shadow-lg hover:shadow-xl text-sm md:text-base lg:text-lg"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 md:py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5 md:hover:-translate-y-1 shadow-lg hover:shadow-xl text-sm md:text-base lg:text-lg"
                   disabled={submitStatus.type === "loading"}
                 >
                   {submitStatus.type === "loading" ? (
