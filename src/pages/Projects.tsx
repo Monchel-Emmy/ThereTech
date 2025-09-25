@@ -130,7 +130,7 @@ const Projects = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-blue-100 leading-relaxed max-w-3xl mx-auto mb-12">
               Discover how we've transformed ideas into digital solutions that drive success for businesses and students alike.
             </p>
             
