@@ -101,7 +101,7 @@ function NavBar() {
         <div className="hidden md:flex md:items-center">
           <Button 
             type="button" 
-            className="bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-300 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center hover:-translate-y-0.5 group"
+            className="bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-300 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center hover:-translate-y-0.5 group cursor-pointer"
             onClick={() => {
               navigate("/Contact");
               closeMenu();

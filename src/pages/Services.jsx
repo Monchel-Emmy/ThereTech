@@ -55,7 +55,7 @@ const Services = () => {
               what's possible in the digital landscape.
             </p>
 
-            <div className="flex justify-center space-x-6">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8 px-4">
               <Link
                 to="#services"
                 className="group relative overflow-hidden px-8 py-4 bg-white text-blue-900 font-bold rounded-full transition-all duration-300 hover:scale-105"

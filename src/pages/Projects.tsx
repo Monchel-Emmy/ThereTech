@@ -136,8 +136,8 @@ const Projects = () => {
               Discover how we've transformed ideas into digital solutions that drive success for businesses and students alike.
             </p>
             
-            <div className="flex justify-center space-x-6">
-              <Link to="#projects" className="group relative overflow-hidden px-8 py-4 bg-white text-blue-900 font-bold rounded-full transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8 px-4">
+              <Link to="/Projects" className="group relative overflow-hidden px-8 py-4 bg-white text-blue-900 font-bold rounded-full transition-all duration-300 hover:scale-105">
                 <span className="relative z-10">View Projects</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
               </Link>

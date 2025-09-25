@@ -34,10 +34,10 @@ const ServiceCard = ({
 
   const colorConfigs = {
     blue: { gradient: "from-blue-500 to-blue-600", light: "blue-100", text: "text-blue-500" },
-    green: { gradient: "from-green-500 to-green-600", light: "green-100", text: "text-green-500" },
-    purple: { gradient: "from-purple-500 to-purple-600", light: "purple-100", text: "text-purple-500" },
-    orange: { gradient: "from-orange-500 to-orange-600", light: "orange-100", text: "text-orange-500" },
-    red: { gradient: "from-red-500 to-red-600", light: "red-100", text: "text-red-500" },
+    green: { gradient: "from-indigo-500 to-blue-600", light: "blue-100", text: "text-indigo-500" },
+    purple: { gradient: "from-blue-500 to-indigo-600", light: "indigo-100", text: "text-blue-500" },
+    orange: { gradient: "from-blue-500 to-indigo-600", light: "indigo-100", text: "text-indigo-500" },
+    red: { gradient: "from-indigo-500 to-blue-600", light: "blue-100", text: "text-blue-500" },
   };
 
   const config = colorConfigs[color] || colorConfigs.blue;
