@@ -1,6 +1,7 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/theretech.png';
+import { ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -161,12 +162,12 @@ const Footer = () => {
       </div>
 
       {/* Floating Action Button */}
-      <button 
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 z-50 group"
-      >
-        <i className="fas fa-chevron-up text-white group-hover:text-blue-100 transition-colors duration-300"></i>
-      </button>
+ <button 
+    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    className="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:rotate-180 z-50 group"
+>
+    <ArrowUp className="text-white group-hover:scale-110 transition-transform duration-300 w-5 h-5" />
+</button>
     </footer>
   );
 };
