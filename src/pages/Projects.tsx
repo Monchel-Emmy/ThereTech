@@ -54,15 +54,13 @@ const Projects = () => {
     return categoryMatch && statusMatch;
   });
 
-  // Get unique categories and statuses for filters
-  const categories = ['All', ...Array.from(new Set(allProjects.map(p => p.category)))];
-  const statuses = ['All', ...Array.from(new Set(allProjects.map(p => p.status)))];
+ 
 
   // Transform API data to match component props
   const transformedProjects = filteredProjects.map(project => ({
-    id: project._id || project.id || Math.random().toString(),
+ 
     title: project.title,
-    category: project.category,
+    
     description: project.shortDescription || project.description,
     technologies: project.technologies || [],
     image: project.image || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
@@ -162,7 +160,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Content */}
-      <section id="projects" className="py-20 relative">
+      <section  className="py-20 relative">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30"></div>
         
@@ -209,7 +207,7 @@ const Projects = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {transformedProjects.map((project) => (
-                  <div key={project.id} className="group relative bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                  <div  className="group relative bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
                     {/* Project Image */}4
                     <div className="relative overflow-hidden">
                       <img 
@@ -228,9 +226,7 @@ const Projects = () => {
                     {/* Project Content */}
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
-                          {project.category}
-                        </span>
+                       
                         <div className="flex items-center space-x-1 text-yellow-400">
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} className="w-3 h-3 fill-current" />
