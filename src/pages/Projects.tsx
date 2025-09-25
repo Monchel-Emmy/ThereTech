@@ -63,7 +63,7 @@ const Projects = () => {
     
     description: project.shortDescription || project.description,
     technologies: project.technologies || [],
-    image: project.image || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+    image: project.image ,
     status: project.status,
     client: project.client,
     duration: project.duration,
