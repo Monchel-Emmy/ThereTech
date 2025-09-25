@@ -30,7 +30,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-     
+      {/* Hero Section with Abstract Background */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -86,7 +86,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section id="services" className="py-32 relative">
+      <section  className="py-32 relative">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30"></div>
 
