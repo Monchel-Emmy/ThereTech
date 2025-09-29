@@ -82,8 +82,8 @@ const Projects = () => {
     },
     {
       quote: "Professional, reliable, and innovative. There Tech delivered our Rwadiscount platform on time and exceeded our expectations.",
-      author: "Michael ITWITAHO",
-      role: "Founder, Rwadiscount",
+      author: "Michel ITWITAHO",
+      role: "Founder, Rwadiscounts",
       rating: 5
     },
     {
