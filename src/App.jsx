@@ -7,14 +7,14 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-// import AdminLayout from "./admin/AdminLayout";
-// import AdminServices from "./admin/pages/AdminServices";
-// import AdminProjects from "./admin/pages/AdminProjects";
-// import AdminAbout from "./admin/pages/AdminAbout";
-// import AdminContact from "./admin/pages/AdminContact";
-// import AdminLogin from "./admin/pages/AdminLogin";
-// import AdminUsers from "./admin/pages/AdminUsers";
-// import RequireAdmin from "./admin/RequireAdmin";
+import AdminLayout from "./admin/AdminLayout";
+import AdminServices from "./admin/pages/AdminServices";
+import AdminProjects from "./admin/pages/AdminProjects";
+import AdminAbout from "./admin/pages/AdminAbout";
+import AdminContact from "./admin/pages/AdminContact";
+import AdminLogin from "./admin/pages/AdminLogin";
+import AdminUsers from "./admin/pages/AdminUsers";
+import RequireAdmin from "./admin/RequireAdmin";
 
 function App() {
 	return (
