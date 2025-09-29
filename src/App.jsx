@@ -31,8 +31,8 @@ function App() {
 				</Route>  
 			</Route>
 
-			{/* Admin routes */}
-			{/* <Route path="/Admin/Login" element={<AdminLogin />} />
+			 {/* Admin routes  */}
+			 <Route path="/Admin/Login" element={<AdminLogin />} />
 			<Route element={<RequireAdmin />}>
 				<Route path="/Admin" element={<AdminLayout />}>
 					<Route index element={<AdminServices />} />
@@ -42,7 +42,7 @@ function App() {
 					<Route path="Contact" element={<AdminContact />} />
 					<Route path="Users" element={<AdminUsers />} />
 				</Route>
-			</Route> */}
+			</Route> 
 		</Routes>
 	);
 }
