@@ -235,7 +235,7 @@ const Projects = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {transformedProjects.map((project) => (
                   <div className="group relative bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
-                    {/* Project Image */}4
+                    {/* Project Image */}
                     <div className="relative overflow-hidden">
                       <img
                         src={project.image}
