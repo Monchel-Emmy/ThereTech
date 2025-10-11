@@ -197,7 +197,7 @@ const Contact = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl font-black mb-6 md:mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
                 Let's Start
               </span>

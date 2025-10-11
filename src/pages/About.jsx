@@ -15,13 +15,8 @@ import {
   Github,
   Mail,
   Award,
-  Clock,
-  CheckCircle,
   ArrowRight,
   Sparkles,
-  Globe,
-  Code2,
-  GraduationCap,
   Hexagon,
   Circle,
   Quote,
@@ -77,11 +72,18 @@ const About = () => {
     },
   ];
 
-  const teamList = data?.about?.team || [
+  const teamList = [
     {
-      name: "Jean Jacques Mugisha",
-      role: "Lead Developer & Founder",
-      bio: "Full-stack developer with expertise in IoT, web technologies, and system architecture.",
+      name: "Tuyisenge Emmanuel",
+      role: "CEO",
+      bio: "Leading the company with vision and strategic direction, driving innovation and growth.",
+      image: null,
+    },
+    {
+      name: "Gasasira Flex",
+      role: "CTO",
+      bio: "Overseeing technology strategy and development, ensuring technical excellence and innovation.",
+      image: null,
     },
     {
       name: "Michael ITWITAHO",
@@ -395,9 +397,12 @@ const About = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Meet Our Team
             </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              The passionate individuals driving innovation and excellence at There Tech
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {teamList.map((member, index) => (
               <div
                 key={index}
@@ -410,6 +415,7 @@ const About = () => {
                       <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg md:rounded-xl flex items-center justify-center text-white font-bold text-lg md:text-xl">
                         {getInitials(member.name)}
                       </div>
+                      <p className="text-blue-600 text-sm font-medium">Photo Space</p>
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1 truncate">
@@ -448,6 +454,9 @@ const About = () => {
                     </a>
                   </div>
                 </div>
+
+                {/* Hover Effect Border */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-200 rounded-xl md:rounded-2xl transition-all duration-300 pointer-events-none"></div>
               </div>
             ))}
           </div>
@@ -493,7 +502,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
+  
       <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-white to-blue-50/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">
