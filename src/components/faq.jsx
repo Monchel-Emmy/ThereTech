@@ -51,9 +51,13 @@ const FAQ = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
-          </h2>
+         <div className="flex items-center justify-center mb-4 md:mb-6">
+              <div className="w-8 md:w-12 h-0.5 bg-blue-500 mr-3 md:mr-4"></div>
+              <span className="text-blue-600 font-bold uppercase tracking-widest text-xs md:text-sm">
+         Frequently Asked Questions
+              </span>
+              <div className="w-8 md:w-12 h-0.5 bg-blue-500 ml-3 md:ml-4"></div>
+            </div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Click on any question to see the answer.
           </p>
