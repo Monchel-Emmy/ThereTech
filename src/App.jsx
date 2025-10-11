@@ -16,6 +16,8 @@ import AdminLogin from "./admin/pages/AdminLogin";
 import AdminUsers from "./admin/pages/AdminUsers";
 import RequireAdmin from "./admin/RequireAdmin";
 
+
+
 function App() {
 	return (
 		<Routes>
@@ -31,7 +33,7 @@ function App() {
 				</Route>  
 			</Route>
 
-			
+			 {/* Admin routes  */}
 			 <Route path="/Admin/Login" element={<AdminLogin />} />
 			<Route element={<RequireAdmin />}>
 				<Route path="/Admin" element={<AdminLayout />}>
@@ -42,7 +44,7 @@ function App() {
 					<Route path="Contact" element={<AdminContact />} />
 					<Route path="Users" element={<AdminUsers />} />
 				</Route>
-			</Route>
+			</Route> 
 		</Routes>
 	);
 }

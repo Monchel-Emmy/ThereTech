@@ -1,3 +1,4 @@
+import React from "react";
 import { useAbout } from "../hooks/useApiQuery";
 import {
   Target,
@@ -21,6 +22,9 @@ import {
   Quote,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
+import { baseUrl } from "../config";
+
 
 const About = () => {
   const { data, isLoading, error } = useAbout();
@@ -82,16 +86,9 @@ const About = () => {
       image: null,
     },
     {
-      name: "Igirimpuhwe Dositha",
-      role: "Fullstack Developer",
-      bio: "Building robust and scalable web applications with modern technologies and best practices.",
-      image: null,
-    },
-    {
-      name: "Niyigena Nisingizwe Nicole",
-      role: "Social Media & Market Manager",
-      bio: "Managing brand presence, social media strategy, and market outreach initiatives.",
-      image: null,
+      name: "Michael ITWITAHO",
+      role: "Project Manager",
+      bio: "Experienced in managing complex projects and ensuring timely delivery with quality.",
     },
   ];
 
@@ -134,6 +131,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
+      <Meta
+        title="About Us | There Tech Ltd"
+        description="Learn more about our mission, vision, and team on the About page."
+        keywords="About us, Company info, Team, Mission"
+        url={`${baseUrl}/About`}
+      />
+
       {/* Enhanced Hero Section */}
       <section className="relative py-16 md:py-24 lg:py-32 xl:py-40 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
@@ -155,7 +159,7 @@ const About = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
                 About {aboutData.companyName}
               </span>
@@ -402,45 +406,53 @@ const About = () => {
             {teamList.map((member, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
+                className="group relative bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 md:hover:-translate-y-2 overflow-hidden"
               >
-                {/* Photo Space */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                  {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Users className="w-8 h-8 text-blue-600" />
+                <div className="relative z-10 p-4 md:p-6">
+                  {/* Avatar and Info */}
+                  <div className="flex items-center space-x-3 md:space-x-4 mb-3 md:mb-4">
+                    <div className="relative">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg md:rounded-xl flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                        {getInitials(member.name)}
                       </div>
                       <p className="text-blue-600 text-sm font-medium">Photo Space</p>
                     </div>
-                  )}
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors duration-300"></div>
-                </div>
-
-                <div className="relative z-10 p-6">
-                  {/* Member Info */}
-                  <div className="text-center mb-4">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
-                      {member.name}
-                    </h3>
-                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full">
-                      {member.role}
-                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1 truncate">
+                        {member.name}
+                      </h3>
+                      <span className="inline-block px-2 md:px-3 py-1 bg-blue-100 text-blue-700 text-xs md:text-sm font-semibold rounded-full">
+                        {member.role}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Bio */}
-                  <p className="text-gray-600 leading-relaxed text-sm text-center mb-4">
+                  <p className="text-gray-600 leading-relaxed text-xs md:text-sm mb-3 md:mb-4">
                     {member.bio}
                   </p>
 
                   {/* Social Links */}
-                  
+                  <div className="flex space-x-2">
+                    <a
+                      href="#"
+                      className="w-6 h-6 md:w-7 md:h-7 bg-gray-100 rounded md:rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                    >
+                      <Linkedin className="w-3 h-3 md:w-4 md:h-4" />
+                    </a>
+                    <a
+                      href="#"
+                      className="w-6 h-6 md:w-7 md:h-7 bg-gray-100 rounded md:rounded-lg flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                    >
+                      <Github className="w-3 h-3 md:w-4 md:h-4" />
+                    </a>
+                    <a
+                      href="#"
+                      className="w-6 h-6 md:w-7 md:h-7 bg-gray-100 rounded md:rounded-lg flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition-all duration-300"
+                    >
+                      <Mail className="w-3 h-3 md:w-4 md:h-4" />
+                    </a>
+                  </div>
                 </div>
 
                 {/* Hover Effect Border */}

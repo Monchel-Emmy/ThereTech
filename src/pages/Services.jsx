@@ -13,6 +13,8 @@ import {
   Hexagon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
+import { baseUrl } from "../config";
 
 const Services = () => {
   const { data, isLoading, error } = useServices();
@@ -30,6 +32,13 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
+      <Meta
+        title="Our Services | There Tech Ltd"
+        description="Discover the range of innovative services offered by There Tech Ltd, from web and mobile development to IoT and AI solutions."
+        keywords="Services, Web Development, Mobile Apps, IoT, AI Solutions, There Tech"
+        url={`${baseUrl}/Services`}
+      />
+
       {/* Hero Section with Abstract Background */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
@@ -86,7 +95,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section  className="py-32 relative">
+      <section className="py-32 relative">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30"></div>
 
@@ -149,7 +158,6 @@ const Services = () => {
                     {...service}
                     layout="timeline"
                     index={index}
-                    
                   />
                 ))}
               </div>
