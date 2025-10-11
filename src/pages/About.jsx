@@ -526,7 +526,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Custom CSS for animations */}
+    
       <style jsx>{`
         @keyframes float {
           0%,
