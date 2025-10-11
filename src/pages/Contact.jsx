@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import FAQ from "../components/faq";
+import Meta from "../components/Meta";
+import { baseUrl } from "../config";
 
 const Contact = () => {
   const { data, isLoading, error } = useContact();
@@ -165,6 +167,13 @@ const Contact = () => {
 
   return (
     <div className=" min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
+      <Meta
+        title="Contact Us | There Tech Ltd"
+        description="Get in touch with There Tech Ltd. We're here to answer your questions, discuss projects, and collaborate on innovative solutions."
+        keywords="Contact, Get in touch, Support, Inquiry, There Tech"
+        url={`${baseUrl}/Contact`}
+      />
+
       {/* Enhanced Hero Section */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
@@ -212,7 +221,6 @@ const Contact = () => {
                   About Us
                   <ServerIcon className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </span>
-        
               </Link>
 
               {/* Secondary Button */}
@@ -226,8 +234,6 @@ const Contact = () => {
                 </span>
               </Link>
             </div>
-
-          
           </div>
         </div>
 
@@ -287,7 +293,7 @@ const Contact = () => {
                     color: "from-blue-500 to-blue-600",
                     link: `mailto:${contactData.companyInfo.email}`,
                   },
-                 
+
                   {
                     icon: Clock,
                     title: "Office Hours",
