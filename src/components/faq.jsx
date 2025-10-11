@@ -55,7 +55,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Find answers to common questions about our services and processes.
+            Click on any question to see the answer.
           </p>
         </div>
 
@@ -63,13 +63,11 @@ const FAQ = () => {
           {faqData.map((faq) => (
             <div
               key={faq.id}
-              className="bg-white border border-gray-200 rounded-lg mb-4 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-white border border-gray-200 rounded-lg mb-4 shadow-sm"
             >
               <button
                 className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
                 onClick={() => toggleFaq(faq.id)}
-                onMouseEnter={() => setActiveFaq(faq.id)}
-                onMouseLeave={() => setActiveFaq(null)}
               >
                 <span className="text-lg font-medium text-gray-900 pr-4">
                   {faq.question}
