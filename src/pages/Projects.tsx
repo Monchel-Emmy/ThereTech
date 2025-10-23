@@ -20,8 +20,7 @@ import {
   Circle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Meta from "../components/Meta";
-import { baseUrl } from "../config";
+
 
 interface Project {
   _id?: string;
@@ -115,12 +114,7 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      <Meta
-        title="Projects Completed | There Tech Ltd"
-        description="Explore our completed projects and innovative solutions at There Tech Ltd. Let's discuss how we can collaborate on your next project."
-        keywords="Projects, Portfolio, Client Work, Solutions, Collaboration, There Tech"
-        url={`${baseUrl}/Projects`}
-      />
+    
 
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">

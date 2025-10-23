@@ -22,8 +22,6 @@ import {
   Quote,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Meta from "../components/Meta";
-import { baseUrl } from "../config";
 
 
 const About = () => {
@@ -131,12 +129,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      <Meta
-        title="About Us | There Tech Ltd"
-        description="Learn more about our mission, vision, and team on the About page."
-        keywords="About us, Company info, Team, Mission"
-        url={`${baseUrl}/About`}
-      />
+     
 
       {/* Enhanced Hero Section */}
       <section className="relative py-16 md:py-24 lg:py-32 xl:py-40 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
