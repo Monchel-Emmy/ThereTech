@@ -57,7 +57,7 @@ const Projects = () => {
     return categoryMatch && statusMatch;
   });
 
-  // Transform API data to match component props
+ 
   const transformedProjects = filteredProjects.map((project) => ({
     title: project.title,
 
@@ -116,7 +116,7 @@ const Projects = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
     
 
-      {/* Hero Section */}
+      
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
         <div className="absolute inset-0 overflow-hidden">
