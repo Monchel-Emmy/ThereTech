@@ -137,8 +137,8 @@ const Projects = () => {
               </span>
             </div>
 
-            <h1 className="text-5xl font-black mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-8 leading-tight">
+              <span className=" bg-clip-text text-white">
                 Innovative Projects Gallery
               </span>
             </h1>

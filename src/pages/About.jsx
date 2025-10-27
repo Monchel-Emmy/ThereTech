@@ -121,7 +121,7 @@ const About = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
                 About {aboutData.companyName}
               </span>
