@@ -398,26 +398,7 @@ const About = () => {
                 </p>
 
                 {/* Social Links */}
-                <div className="flex justify-center space-x-3">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Github className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                </div>
+             
               </div>
 
               {/* Hover Effect */}
@@ -449,26 +430,7 @@ const About = () => {
                   Overseeing technology strategy and development, ensuring technical excellence and innovation across all products.
                 </p>
 
-                <div className="flex justify-center space-x-3">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-green-600 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-green-600 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Github className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-green-600 hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                </div>
+            
               </div>
             </div>
 
@@ -478,9 +440,7 @@ const About = () => {
               <div className="relative z-10 p-6 md:p-8">
                 <div className="flex flex-col items-center text-center mb-4 md:mb-6">
                   <div className="relative mb-4 md:mb-6">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
-                      NN
-                    </div>
+                   
                   </div>
                   
                   <div className="flex-1 min-w-0">
@@ -497,20 +457,6 @@ const About = () => {
                   Driving market growth and sales strategies, building strong client relationships and expanding business opportunities.
                 </p>
 
-                <div className="flex justify-center space-x-3">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-pink-50 rounded-xl flex items-center justify-center text-pink-600 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-pink-50 rounded-xl flex items-center justify-center text-pink-600 hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -539,26 +485,7 @@ const About = () => {
                   Creating robust and scalable software solutions with focus on clean code and innovative problem-solving approaches.
                 </p>
 
-                <div className="flex justify-center space-x-3">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Github className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                </div>
+             
               </div>
             </div>
 
@@ -587,44 +514,12 @@ const About = () => {
                   Developing cutting-edge applications with expertise in modern technologies and commitment to delivering exceptional user experiences.
                 </p>
 
-                <div className="flex justify-center space-x-3">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Github className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  </a>
-                </div>
+              
               </div>
             </div>
           </div>
 
-          {/* Team Stats */}
-          <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-2xl mx-auto">
-            {[
-              { number: "5", label: "Team Members" },
-              { number: "3", label: "Departments" },
-              { number: "100%", label: "Dedicated" },
-              { number: "24/7", label: "Support" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center p-4 md:p-6 bg-white/80 backdrop-blur-md rounded-xl md:rounded-2xl shadow-lg">
-                <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2">{stat.number}</div>
-                <div className="text-gray-600 text-xs md:text-sm font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+        
         </div>
       </section>
 
