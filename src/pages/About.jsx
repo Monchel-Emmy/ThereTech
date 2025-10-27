@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useAbout } from "../hooks/useApiQuery";
 import {
   Target,
@@ -11,9 +11,7 @@ import {
   Heart,
   Shield,
   Zap,
-  Linkedin,
-  Github,
-  Mail,
+ 
   Award,
   ArrowRight,
   Sparkles,
@@ -23,11 +21,10 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-
 const About = () => {
   const { data, isLoading, error } = useAbout();
 
-  // Use API data with fallbacks
+  
   const aboutData = data?.about || {
     companyName: "There Tech",
     tagline:
@@ -70,26 +67,6 @@ const About = () => {
     },
   ];
 
-  const teamList = [
-    {
-      name: "Tuyisenge Emmanuel",
-      role: "CEO",
-      bio: "Leading the company with vision and strategic direction, driving innovation and growth.",
-      image: null,
-    },
-    {
-      name: "Gasasira Flex",
-      role: "CTO",
-      bio: "Overseeing technology strategy and development, ensuring technical excellence and innovation.",
-      image: null,
-    },
-    {
-      name: "Michael ITWITAHO",
-      role: "Project Manager",
-      bio: "Experienced in managing complex projects and ensuring timely delivery with quality.",
-    },
-  ];
-
   const visionText =
     data?.about?.vision ||
     "To be the leading technology partner for innovative businesses worldwide, recognized for our technical excellence, creative solutions, and unwavering commitment to client success.";
@@ -107,14 +84,6 @@ const About = () => {
     Shield,
     Zap,
   };
-
-  const getInitials = (name = "") =>
-    name
-      .trim()
-      .split(/\s+/)
-      .map((w) => w[0]?.toUpperCase() || "")
-      .slice(0, 2)
-      .join("");
 
   if (isLoading) {
     return (
@@ -388,71 +357,167 @@ const About = () => {
             </div>
 
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-              Meet Our Team
+              Meet Our Leadership
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
               The passionate individuals driving innovation and excellence at There Tech
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
-            {teamList.map((member, index) => (
-              <div
-                key={index}
-                className="group relative bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 md:hover:-translate-y-2 overflow-hidden"
-              >
-                <div className="relative z-10 p-4 md:p-6">
-                  {/* Avatar and Info */}
-                  <div className="flex items-center space-x-3 md:space-x-4 mb-3 md:mb-4">
-                    <div className="relative">
-                      <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg md:rounded-xl flex items-center justify-center text-white font-bold text-lg md:text-xl">
-                        {getInitials(member.name)}
-                      </div>
-                      <p className="text-blue-600 text-sm font-medium">Photo Space</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+            {/* CEO */}
+            <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
+              <div className="relative z-10 p-6 md:p-8">
+                {/* Avatar and Info */}
+                <div className="flex flex-col items-center text-center mb-4 md:mb-6">
+                  <div className="relative mb-4 md:mb-6">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                      TE
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1 truncate">
-                        {member.name}
-                      </h3>
-                      <span className="inline-block px-2 md:px-3 py-1 bg-blue-100 text-blue-700 text-xs md:text-sm font-semibold rounded-full">
-                        {member.role}
-                      </span>
-                    </div>
+                   
                   </div>
-
-                  {/* Bio */}
-                  <p className="text-gray-600 leading-relaxed text-xs md:text-sm mb-3 md:mb-4">
-                    {member.bio}
-                  </p>
-
-                  {/* Social Links */}
-                  <div className="flex space-x-2">
-                    <a
-                      href="#"
-                      className="w-6 h-6 md:w-7 md:h-7 bg-gray-100 rounded md:rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
-                    >
-                      <Linkedin className="w-3 h-3 md:w-4 md:h-4" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-6 h-6 md:w-7 md:h-7 bg-gray-100 rounded md:rounded-lg flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition-all duration-300"
-                    >
-                      <Github className="w-3 h-3 md:w-4 md:h-4" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-6 h-6 md:w-7 md:h-7 bg-gray-100 rounded md:rounded-lg flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition-all duration-300"
-                    >
-                      <Mail className="w-3 h-3 md:w-4 md:h-4" />
-                    </a>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                      Tuyisenge Emmanuel
+                    </h3>
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
+                      Chief Executive Officer
+                    </span>
                   </div>
                 </div>
 
-                {/* Hover Effect Border */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-200 rounded-xl md:rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                {/* Bio */}
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4 md:mb-6 text-center">
+                  Leading the company with vision and strategic direction, driving innovation and sustainable growth across all operations.
+                </p>
+
+                {/* Social Links */}
+             
               </div>
-            ))}
+
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
+
+            {/* CTO */}
+            <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
+              <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col items-center text-center mb-4 md:mb-6">
+                  <div className="relative mb-4 md:mb-6">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                      GF
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                      Gasasira Felix
+                    </h3>
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
+                      Chief Technology Officer
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4 md:mb-6 text-center">
+                  Overseeing technology strategy and development, ensuring technical excellence and innovation across all products.
+                </p>
+
+            
+              </div>
+            </div>
+
+            {/* Market and Sales Manager */}
+            <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
+              <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col items-center text-center mb-4 md:mb-6">
+                 <div className="relative mb-4 md:mb-6">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                      NN
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                      NISINGIZWE NIYIGENA Nicole
+                    </h3>
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
+                      Market & Sales Manager
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4 md:mb-6 text-center">
+                  Driving market growth and sales strategies, building strong client relationships and expanding business opportunities.
+                </p>
+
+              </div>
+            </div>
+
+            {/* Software Developer - Dositha */}
+            <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
+              <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col items-center text-center mb-4 md:mb-6">
+                  <div className="relative mb-4 md:mb-6">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                      ID
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                      IGIRIMPUHWE Dositha
+                    </h3>
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
+                      Software Developer
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4 md:mb-6 text-center">
+                  Creating robust and scalable software solutions with focus on clean code and innovative problem-solving approaches.
+                </p>
+
+             
+              </div>
+            </div>
+
+            {/* Software Developer - Jean */}
+            <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
+              <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col items-center text-center mb-4 md:mb-6">
+                  <div className="relative mb-4 md:mb-6">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                      UJ
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                      UWINTWALI Jean de Dieu
+                    </h3>
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
+                      Software Developer
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4 md:mb-6 text-center">
+                  Developing cutting-edge applications with expertise in modern technologies and commitment to delivering exceptional user experiences.
+                </p>
+
+              
+              </div>
+            </div>
           </div>
+
+        
         </div>
       </section>
 
