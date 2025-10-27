@@ -20,8 +20,7 @@ import {
   Circle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Meta from "../components/Meta";
-import { baseUrl } from "../config";
+
 
 interface Project {
   _id?: string;
@@ -46,7 +45,7 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedStatus, setSelectedStatus] = useState("All");
 
-  // Use API data only
+
   const allProjects: Project[] = (data as any)?.projects || [];
 
   // Filter projects based on selection
@@ -58,7 +57,7 @@ const Projects = () => {
     return categoryMatch && statusMatch;
   });
 
-  // Transform API data to match component props
+ 
   const transformedProjects = filteredProjects.map((project) => ({
     title: project.title,
 
@@ -115,14 +114,9 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      <Meta
-        title="Projects Completed | There Tech Ltd"
-        description="Explore our completed projects and innovative solutions at There Tech Ltd. Let's discuss how we can collaborate on your next project."
-        keywords="Projects, Portfolio, Client Work, Solutions, Collaboration, There Tech"
-        url={`${baseUrl}/Projects`}
-      />
+    
 
-      {/* Hero Section */}
+      
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -235,7 +229,7 @@ const Projects = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {transformedProjects.map((project) => (
                   <div className="group relative bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
-                    {/* Project Image */}4
+                    
                     <div className="relative overflow-hidden">
                       <img
                         src={project.image}

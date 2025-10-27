@@ -14,8 +14,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import FAQ from "../components/faq";
-import Meta from "../components/Meta";
-import { baseUrl } from "../config";
+
 
 const Contact = () => {
   const { data, isLoading, error } = useContact();
@@ -167,12 +166,7 @@ const Contact = () => {
 
   return (
     <div className=" min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      <Meta
-        title="Contact Us | There Tech Ltd"
-        description="Get in touch with There Tech Ltd. We're here to answer your questions, discuss projects, and collaborate on innovative solutions."
-        keywords="Contact, Get in touch, Support, Inquiry, There Tech"
-        url={`${baseUrl}/Contact`}
-      />
+    
 
       {/* Enhanced Hero Section */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">

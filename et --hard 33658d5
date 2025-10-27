@@ -1,0 +1,93 @@
+[33m6126cc2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m)[m Merge branch 'develop' of https://github.com/Monchel-Emmy/ThereTech into develop
+[33m66a86b9[m[33m ([m[1;31morigin/develop[m[33m)[m Merge branch 'main' into develop
+[33m7e2580b[m working on the landing page
+[33m256cde5[m working on the landing page
+[33m782dce8[m working on the landing page
+[33m37706f8[m working on the landing page
+[33mecd0f99[m working on the landing page
+[33m0318cd8[m working on the landing page
+[33m47ffc9a[m[33m ([m[1;31morigin/fix/seo-metadata[m[33m)[m defined base url
+[33mbc357b2[m added meta data for each page on the prod domain
+[33mf832939[m same changes
+[33me693973[m same changes
+[33mc0e62fb[m same changes
+[33m07e4586[m Merge branch 'develop'
+[33m2e52674[m fix
+[33m30cfb18[m working on services  page
+[33m778fe2b[m working on services  page
+[33m8b4c699[m working on services  page
+[33m33658d5[m working on services  page
+[33mca9a449[m working on services  page
+[33mdf05ae7[m working on services  page
+[33me047e9e[m working on services  page
+[33me16eca1[m working on services  page
+[33m437d1cb[m working on services  page
+[33mfe0a37e[m working on services  page
+[33mb2dbc40[m working on services  page
+[33m8b9568a[m working on services  page
+[33m03788e6[m working on services  page
+[33mc6bd431[m working on home  page
+[33m9ed4986[m working on home  page
+[33m4db1d5d[m[33m ([m[1;32mmain[m[33m)[m ui revamp
+[33mca3e109[m ui revamp
+[33md49417b[m working on Projects  page
+[33m4395800[m working on Projects  page
+[33m7979c17[m working on home  page
+[33mfdb8dfd[m working on home  page
+[33mc32bc9a[m working on home  page
+[33mc211120[m working on contact page
+[33mb3b2fc8[m working on service page
+[33me5031ae[m working on service page
+[33mb1a53d1[m working on service page
+[33md4cbb51[m working on the home page
+[33ma9d7b03[m working on the home page
+[33m5e88e56[m working on home page
+[33m78ef12d[m working on hero
+[33mde2992f[m working on navbar
+[33m06478f5[m working on navbar
+[33m3f0f729[m analytics updates
+[33me448010[m analytics addition
+[33m87524b8[m working on navbar
+[33mc0bb5d0[m cors changes
+[33mc90dea4[m[33m ([m[1;32mproduction[m[33m)[m fix the logo
+[33m1ae68f5[m[33m ([m[1;32mcheckout[m[33m)[m Notification updated
+[33m8afb06b[m Notification updated
+[33m2cf1f01[m Notification added
+[33m9011423[m Notification added
+[33m8316744[m Notification added
+[33m730f7bc[m service backend
+[33m7cafad4[m same changes on about us
+[33m7040cf6[m same changes on about us
+[33m58f032b[m same changes on about us
+[33ma95fb84[m same changes on about us
+[33m456e7c0[m same changes into backend
+[33mda15495[m same changes link on services
+[33m39ff569[m same changes link on services
+[33m3ce63bc[m same changes link on services
+[33m502588e[m same changes link on services
+[33m119fa05[m same changes link on services
+[33m6bb595b[m same changes link on services
+[33mc9fa1be[m same changes link on services
+[33m0bfebb5[m same changes
+[33m1a61965[m new updates on front-end
+[33mf4ca915[m changess
+[33mfaefc0c[m Refactor API handling: Replace custom useApi hook with TanStack Query for improved nd caching. Update components to use new hooks and adjust loading states accordingly. data fetching aRemove obsolete useApi.js file.
+[33m9d5f3b3[m logo update
+[33ma5d7a56[m logo updates
+[33m75ca6bb[m logo update
+[33m8e45c6f[m Merge branch 'main' of https://github.com/Monchel-Emmy/ThereTech
+[33ma1b2337[m Fix bugs
+[33me420a24[m Update README.md
+[33m2de4a20[m Update .env
+[33m27256b6[m Fix About page: Add complete fallback data including stats
+[33m5311929[m Fix About page to show content even when database is empty
+[33m5578007[m Remove all fallback data and implement professional skeleton loading across all pages
+[33mc7c9ca4[m Add skeleton loading animations and keep-alive script for better UX
+[33m90a930c[m Fix contact form to use deployed backend API
+[33mb36f385[m Add Vercel configuration to fix client-side routing
+[33mccb1efe[m Fix API URL fallback to use deployed backend
+[33m73482fb[m Fix CORS to allow Vercel frontend domain
+[33meb06277[m Fix API connection to use port 5001 and connect to online MongoDB
+[33mc7c037a[m fix
+[33m72aa870[m fix
+[33m2205cd4[m first commit

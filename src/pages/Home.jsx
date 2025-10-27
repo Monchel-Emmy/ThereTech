@@ -5,8 +5,7 @@ import { useServices } from "../hooks/useApiQuery";
 import { ServiceSkeleton } from "../components/SkeletonLoader";
 import "../components/Notification.css";
 import { Link } from "react-router-dom";
-import Meta from "../components/Meta";
-import { baseUrl } from "../config";
+
 
 const Home = () => {
   const { data, isLoading, error } = useServices();
@@ -24,12 +23,7 @@ const Home = () => {
 
   return (
     <div className=" min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100">
-      <Meta
-        title="Empowering Innovation | There Tech Ltd "
-        description="There Tech Ltd is a Rwandan tech company empowering innovation, helping businesses and individuals level up with modern and smart technology solutions."
-        keywords="There Tech, Rwanda, Innovation, Technology Solutions, Web Development, Mobile Apps, IoT, AI"
-        url={baseUrl}
-      />
+     
 
       <div className="relative overflow-hidden">
         <Hero />
