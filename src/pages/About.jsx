@@ -367,12 +367,12 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
             {/* CEO */}
             <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
               <div className="relative z-10 p-6 md:p-8">
                 {/* Avatar and Info */}
                 <div className="flex flex-col items-center text-center mb-4 md:mb-6">
                   <div className="relative mb-4 md:mb-6">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
                       TE
                     </div>
                    
@@ -489,11 +489,11 @@ const About = () => {
 
             {/* Software Developer - Jean */}
             <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-600"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
               <div className="relative z-10 p-6 md:p-8">
                 <div className="flex flex-col items-center text-center mb-4 md:mb-6">
                   <div className="relative mb-4 md:mb-6">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
                       UJ
                     </div>
                   </div>
@@ -502,7 +502,7 @@ const About = () => {
                     <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                       UWINTWALI Jean de Dieu
                     </h3>
-                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 text-sm md:text-base font-semibold rounded-full border border-amber-200">
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
                       Software Developer
                     </span>
                   </div>
