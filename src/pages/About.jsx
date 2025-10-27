@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useAbout } from "../hooks/useApiQuery";
 import {
   Target,
@@ -11,9 +11,7 @@ import {
   Heart,
   Shield,
   Zap,
-  Linkedin,
-  Github,
-  Mail,
+ 
   Award,
   ArrowRight,
   Sparkles,
