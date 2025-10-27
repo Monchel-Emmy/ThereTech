@@ -651,6 +651,7 @@ const Contact = () => {
 
         /* Smooth scrolling for anchor links */
         html {
+        
           scroll-behavior: smooth;
         }
       `}</style>
