@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   const { data, isLoading, error } = useAbout();
 
-  // Use API data with fallbacks
+  
   const aboutData = data?.about || {
     companyName: "There Tech",
     tagline:
@@ -375,9 +375,7 @@ const About = () => {
                     <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
                       TE
                     </div>
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 md:w-10 md:h-10 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-                      <Award className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                    </div>
+                   
                   </div>
                   
                   <div className="flex-1 min-w-0">
@@ -405,11 +403,11 @@ const About = () => {
 
             {/* CTO */}
             <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-blue-600"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
               <div className="relative z-10 p-6 md:p-8">
                 <div className="flex flex-col items-center text-center mb-4 md:mb-6">
                   <div className="relative mb-4 md:mb-6">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
                       GF
                     </div>
                   </div>
@@ -418,7 +416,7 @@ const About = () => {
                     <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                       Gasasira Felix
                     </h3>
-                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-green-100 to-blue-100 text-green-700 text-sm md:text-base font-semibold rounded-full border border-green-200">
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
                       Chief Technology Officer
                     </span>
                   </div>
@@ -434,18 +432,20 @@ const About = () => {
 
             {/* Market and Sales Manager */}
             <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-600"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
               <div className="relative z-10 p-6 md:p-8">
                 <div className="flex flex-col items-center text-center mb-4 md:mb-6">
-                  <div className="relative mb-4 md:mb-6">
-                   
+                 <div className="relative mb-4 md:mb-6">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                      NN
+                    </div>
                   </div>
                   
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                       NISINGIZWE NIYIGENA Nicole
                     </h3>
-                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-700 text-sm md:text-base font-semibold rounded-full border border-pink-200">
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
                       Market & Sales Manager
                     </span>
                   </div>
@@ -460,11 +460,11 @@ const About = () => {
 
             {/* Software Developer - Dositha */}
             <div className="group relative bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/50">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
               <div className="relative z-10 p-6 md:p-8">
                 <div className="flex flex-col items-center text-center mb-4 md:mb-6">
                   <div className="relative mb-4 md:mb-6">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white font-bold text-2xl md:text-3xl shadow-lg">
                       ID
                     </div>
                   </div>
@@ -473,7 +473,7 @@ const About = () => {
                     <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                       IGIRIMPUHWE Dositha
                     </h3>
-                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 text-sm md:text-base font-semibold rounded-full border border-indigo-200">
+                    <span className="inline-block px-3 md:px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-100 text-blue-700 text-sm md:text-base font-semibold rounded-full border border-blue-200">
                       Software Developer
                     </span>
                   </div>
