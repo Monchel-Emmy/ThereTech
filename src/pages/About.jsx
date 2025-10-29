@@ -99,7 +99,7 @@ const About = () => {
 
   return (
     <>
-    <SEO title="ThereTech||About Page"  description="About page of ThereTech"/>
+    <SEO title="ThereTech||About Page"  content="About page of ThereTech" name="About page"/>
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
      
 
