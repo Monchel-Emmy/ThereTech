@@ -13,6 +13,7 @@ import {
   Hexagon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../components/seo";
 
 const Services = () => {
   const { data, isLoading, error } = useServices();
@@ -29,6 +30,8 @@ const Services = () => {
   }));
 
   return (
+    <>
+    <SEO  title="ThereTech||Service Page" />
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
      
   
@@ -280,6 +283,7 @@ const Services = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
