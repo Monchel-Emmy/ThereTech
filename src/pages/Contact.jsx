@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import FAQ from "../components/faq";
+import SEO from "../components/seo";
 
 
 const Contact = () => {
@@ -123,6 +124,8 @@ const Contact = () => {
 
 
   return (
+    <>
+    <SEO/>
     <div className=" min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
     
 
@@ -614,6 +617,7 @@ const Contact = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 
