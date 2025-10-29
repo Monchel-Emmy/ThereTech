@@ -20,6 +20,7 @@ import {
   Quote,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../components/seo";
 
 const About = () => {
   const { data, isLoading, error } = useAbout();
@@ -97,6 +98,8 @@ const About = () => {
   }
 
   return (
+    <>
+    <SEO title="ThereTech||About Page"  content="About page of ThereTech" name="About page"/>
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
      
 
@@ -612,6 +615,7 @@ const About = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 

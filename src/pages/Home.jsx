@@ -5,6 +5,7 @@ import { useServices } from "../hooks/useApiQuery";
 import { ServiceSkeleton } from "../components/SkeletonLoader";
 import "../components/Notification.css";
 import { Link } from "react-router-dom";
+import SEO from "../components/seo";
 
 
 const Home = () => {
@@ -22,6 +23,8 @@ const Home = () => {
   }));
 
   return (
+    <>
+    <SEO title="ThereTech||Home Page"/>
     <div className=" min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100">
      
 
@@ -128,6 +131,7 @@ const Home = () => {
         <Stats />
       </div>
     </div>
+    </>
   );
 };
 

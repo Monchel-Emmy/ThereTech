@@ -20,6 +20,7 @@ import {
   Circle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../components/seo";
 
 
 interface Project {
@@ -113,10 +114,10 @@ const Projects = () => {
   };
 
   return (
+   <>
+  <SEO title="ThereTech||Project Page"  content="Project page of ThereTech" name="Project page"/>
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-    
 
-      
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -415,6 +416,8 @@ const Projects = () => {
         </div>
       </section>
     </div>
+
+   </>
   );
 };
 
