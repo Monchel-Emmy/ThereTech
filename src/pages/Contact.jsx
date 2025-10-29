@@ -125,7 +125,7 @@ const Contact = () => {
 
   return (
     <>
-    <SEO/>
+    <SEO title="ThereTech||Contact page" name="Contact page" content="contact page of ThereTech"/>
     <div className=" min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
     
 
