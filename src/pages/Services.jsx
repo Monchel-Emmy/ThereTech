@@ -31,16 +31,15 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
      
-
-      {/* Hero Section with Abstract Background */}
+  
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
-        {/* Abstract Background Shapes */}
+      
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-64 bg-blue-600/10 rounded-full blur-[100px]"></div>
 
-          {/* Grid Pattern */}
+        
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         </div>
 
