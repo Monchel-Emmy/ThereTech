@@ -13,8 +13,7 @@ import {
   Hexagon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Meta from "../components/Meta";
-import { baseUrl } from "../config";
+import SEO from "../components/seo";
 
 const Services = () => {
   const { data, isLoading, error } = useServices();
@@ -31,30 +30,26 @@ const Services = () => {
   }));
 
   return (
+    <>
+    <SEO  title="ThereTech||Service Page" />
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      <Meta
-        title="Our Services | There Tech Ltd"
-        description="Discover the range of innovative services offered by There Tech Ltd, from web and mobile development to IoT and AI solutions."
-        keywords="Services, Web Development, Mobile Apps, IoT, AI Solutions, There Tech"
-        url={`${baseUrl}/Services`}
-      />
-
-      {/* Hero Section with Abstract Background */}
+     
+  
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
-        {/* Abstract Background Shapes */}
+      
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-64 bg-blue-600/10 rounded-full blur-[100px]"></div>
 
-          {/* Grid Pattern */}
+        
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="container mx-auto text-center text-white">
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">
+              <span className="text-white ">
                 Transformative Technology Services
               </span>
             </h1>
@@ -288,6 +283,7 @@ const Services = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

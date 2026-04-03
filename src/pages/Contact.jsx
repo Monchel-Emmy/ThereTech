@@ -3,7 +3,6 @@ import { useContact } from "../hooks/useApiQuery";
 import {
   Mail,
   Phone,
-  MapPin,
   Clock,
   Send,
   MessageCircle,
@@ -14,11 +13,11 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import FAQ from "../components/faq";
-import Meta from "../components/Meta";
-import { baseUrl } from "../config";
+import SEO from "../components/seo";
+
 
 const Contact = () => {
-  const { data, isLoading, error } = useContact();
+  const { data } = useContact();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,7 +31,7 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
   const [activeFaq, setActiveFaq] = useState(null);
 
-  // Fallback data if API fails
+
   const fallbackContact = {
     companyInfo: {
       name: "There-Tech",
@@ -121,60 +120,16 @@ const Contact = () => {
     }
   };
 
-  // FAQ data
-  const faqData = [
-    {
-      id: 1,
-      question: "What types of projects do you work on?",
-      answer:
-        "We work on a wide range of projects including IoT solutions, custom software development, mobile apps, web applications, and student project support. No project is too small or too complex.",
-    },
-    {
-      id: 2,
-      question: "Do you work with students?",
-      answer:
-        "Absolutely! We specialize in helping students turn their academic projects into functional prototypes. We provide mentorship, technical guidance, and development support.",
-    },
-    {
-      id: 3,
-      question: "What is your typical project timeline?",
-      answer:
-        "Project timelines vary depending on complexity. Small projects can take 2-4 weeks, while larger applications may take 2-6 months. We always provide detailed timelines during our initial consultation.",
-    },
-    {
-      id: 4,
-      question: "Do you provide ongoing support?",
-      answer:
-        "Yes, we offer ongoing support and maintenance for all our projects. We believe in building long-term relationships with our clients.",
-    },
-    {
-      id: 5,
-      question: "What technologies do you specialize in?",
-      answer:
-        "We work with modern technologies including React, Node.js, Python, IoT platforms, mobile development (React Native, Flutter), and cloud services like AWS and Azure.",
-    },
-    {
-      id: 6,
-      question: "How do you handle project pricing?",
-      answer:
-        "We provide transparent pricing based on project requirements. We offer fixed-price projects for well-defined scopes and hourly rates for ongoing work. Every project starts with a free consultation.",
-    },
-  ];
+  
 
-  const toggleFaq = (faqId) => {
-    setActiveFaq(activeFaq === faqId ? null : faqId);
-  };
 
   return (
+    <>
+    <SEO title="ThereTech||Contact Page" name="Contact page" content="contact page of ThereTech"/>
     <div className=" min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      <Meta
-        title="Contact Us | There Tech Ltd"
-        description="Get in touch with There Tech Ltd. We're here to answer your questions, discuss projects, and collaborate on innovative solutions."
-        keywords="Contact, Get in touch, Support, Inquiry, There Tech"
-        url={`${baseUrl}/Contact`}
-      />
+    
 
-      {/* Enhanced Hero Section */}
+    
       <section className="relative py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-300 to-indigo-400">
         {/* Abstract Background Shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -657,10 +612,12 @@ const Contact = () => {
 
         /* Smooth scrolling for anchor links */
         html {
+        
           scroll-behavior: smooth;
         }
       `}</style>
     </div>
+    </>
   );
 };
 
