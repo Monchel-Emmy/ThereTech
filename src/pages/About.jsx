@@ -456,7 +456,9 @@ const About = () => {
                 </div>
 
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-4 md:mb-6 text-center">
-                  Managing day-to-day operations, coordinating teams, and ensuring smooth business flow.
+                 Coordinating operations  with a meticulous attention to detail,
+                  ensuring our daily workflows 
+                 and logistics run seamlessly to support our broader company goals.
                 </p>
 
               </div>
