@@ -114,7 +114,7 @@ const Footer = () => {
             </h4>
             <div className="space-y-4">
               {[
-                { icon: 'fas fa-envelope', text: 'theretech250@gmail.com', link: 'mailto:theretech250@gmail.com' },
+                { icon: 'fas fa-envelope', text: 'theretech.rw@outlook.com', link: 'mailto:theretech.rw@outlook.com' },
                 { icon: 'fab fa-whatsapp', text: '+250 782 419 365', link: 'https://wa.me/250782419365' },
                 { icon: 'fas fa-map-marker-alt', text: 'Kigali, Rwanda', link: '#' }
               ].map((contact, index) => (
@@ -142,7 +142,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
           <div className="text-center lg:text-left">
             <p className="text-blue-100/60 text-lg">
-              &copy; 2025 There Tech Ltd. All rights reserved.
+              &copy; 2026 There Tech Ltd. All rights reserved.
             </p>
           </div>
           

@@ -43,7 +43,7 @@ const Contact = () => {
         country: "Rwanda",
       },
       phone: "+250 782 419 365",
-      email: "theretech250@gmail.com",
+      email: "theretech.rw@outlook.com",
       website: "https://theretech.rw",
     },
     socialMedia: {
